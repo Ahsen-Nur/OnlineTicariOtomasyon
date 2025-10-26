@@ -1,0 +1,21 @@
+# Derleme çıktıları
+bin/
+obj/
+
+# Kullanıcı ayarları
+*.user
+*.suo
+
+# Veritabanı dosyaları
+*.db
+*.sqlite
+
+# macOS sistem dosyaları
+*.DS_Store
+
+# VS Code ve IDEA ayar klasörleri
+.vscode/
+.idea/
+
+# Yüklenen görseller (ürün resimleri)
+wwwroot/images/urunler/

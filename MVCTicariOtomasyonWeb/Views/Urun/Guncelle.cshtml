@@ -1,0 +1,94 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Urun
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Ürün Güncelle";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <!-- TempData mesajları -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+    @if (TempData["DbError"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["DbError"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+    @if (TempData["ModelErrors"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["ModelErrors"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-gradient-warning text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Ürün Güncelle</h5>
+            <a asp-controller="Urun" asp-action="Index" class="btn btn-light btn-sm fw-bold">
+                <i class="fas fa-arrow-left me-1"></i>Geri Dön
+            </a>
+        </div>
+
+        <div class="card-body bg-light">
+            <form method="post" asp-action="UrunGuncelle">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="UrunId" />
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Ürün Adı</label>
+                        <input asp-for="UrunAd" class="form-control" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Marka</label>
+                        <input asp-for="Marka" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Stok</label>
+                        <input asp-for="Stok" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Alış Fiyatı</label>
+                        <input asp-for="AlisFiyat" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Satış Fiyatı</label>
+                        <input asp-for="SatisFiyat" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Durum</label>
+                        <select asp-for="Durum" class="form-select">
+                            <option value="true">Aktif</option>
+                            <option value="false">Pasif</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label fw-bold">Kategori</label>
+                        <input asp-for="KategoriId" class="form-control" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary fw-bold">
+                    <i class="fas fa-save me-1"></i>Güncelle
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

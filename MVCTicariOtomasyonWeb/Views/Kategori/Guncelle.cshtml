@@ -1,0 +1,61 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Kategori
+
+@{
+    ViewData["Title"] = "Kategori Güncelle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+
+    <!-- TempData mesajları -->
+    @if (TempData["DbError"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["DbError"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+    @if (TempData["ModelErrors"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["ModelErrors"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Kategori Güncelle</h5>
+        </div>
+
+        <div class="card-body bg-light">
+            <!-- ÖNEMLİ: Anti-Forgery Token eklendi -->
+            <form asp-action="Guncelle" method="post">
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" asp-for="KategoriId" />
+
+                <!-- İsteğe bağlı: Validation özetini göster -->
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+                <div class="mb-3">
+                    <label asp-for="KategoriAd" class="form-label fw-semibold">Kategori Adı</label>
+                    <input asp-for="KategoriAd" class="form-control" />
+                    <span asp-validation-for="KategoriAd" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Kaydet
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Geri Dön
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Client-side validation için gerekli -->
+    <partial name="_ValidationScriptsPartial" />
+}
