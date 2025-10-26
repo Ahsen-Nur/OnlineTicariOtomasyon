@@ -20,54 +20,42 @@ namespace MVCTicariOtomasyonWeb.Controllers
             _env = env;
         }
 
-        // 🔹 Ürün listesi
         public IActionResult Index()
         {
             var urunler = _context.Uruns
                 .Include(u => u.Kategori)
+                .Where(u => u.Durum == true)
                 .OrderBy(u => u.UrunId)
                 .ToList();
 
             return View(urunler);
         }
 
-        // 🔹 Yeni Ürün Formu (GET)
         [HttpGet]
         public IActionResult YeniUrun()
         {
             ViewBag.Kategoriler = _context.Kategoris
+                .Where(k => k.Durum == true)
                 .Select(k => new SelectListItem
                 {
                     Text = k.KategoriAd,
                     Value = k.KategoriId.ToString()
                 })
                 .ToList();
-
             return View();
         }
 
-        // 🔹 Yeni Ürün Kaydı (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult YeniUrun(Urun p, IFormFile UrunGorsel)
         {
-            // 🔸 ModelState doğrulama dışında bırakılacak alanlar
             ModelState.Remove(nameof(Urun.Kategori));
             ModelState.Remove(nameof(Urun.SatisHarekets));
             ModelState.Remove(nameof(Urun.UrunGorsel));
 
-            // 🔸 Negatif değerleri sıfırla
             if (p.Stok < 0) p.Stok = 0;
             if (p.AlisFiyat < 0) p.AlisFiyat = 0;
             if (p.SatisFiyat < 0) p.SatisFiyat = 0;
-
-            ViewBag.Kategoriler = _context.Kategoris
-                .Select(k => new SelectListItem
-                {
-                    Text = k.KategoriAd,
-                    Value = k.KategoriId.ToString()
-                })
-                .ToList();
 
             if (!ModelState.IsValid)
             {
@@ -75,7 +63,6 @@ namespace MVCTicariOtomasyonWeb.Controllers
                 return View(p);
             }
 
-            // 🔹 Görsel yükleme
             if (UrunGorsel != null && UrunGorsel.Length > 0)
             {
                 string uploadsFolder = Path.Combine(_env.WebRootPath, "images/urunler");
@@ -102,7 +89,6 @@ namespace MVCTicariOtomasyonWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // 🔹 Ürün Güncelleme (GET)
         [HttpGet]
         public IActionResult Guncelle(int id)
         {
@@ -110,6 +96,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
             if (urun == null) return NotFound();
 
             ViewBag.Kategoriler = _context.Kategoris
+                .Where(k => k.Durum == true)
                 .Select(k => new SelectListItem
                 {
                     Text = k.KategoriAd,
@@ -120,7 +107,6 @@ namespace MVCTicariOtomasyonWeb.Controllers
             return View(urun);
         }
 
-        // 🔹 Ürün Güncelleme (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Guncelle(Urun p, IFormFile YeniGorsel)
@@ -129,23 +115,25 @@ namespace MVCTicariOtomasyonWeb.Controllers
             ModelState.Remove(nameof(Urun.SatisHarekets));
             ModelState.Remove(nameof(Urun.UrunGorsel));
 
-            // 🔸 Negatif değerleri sıfırla
             if (p.Stok < 0) p.Stok = 0;
             if (p.AlisFiyat < 0) p.AlisFiyat = 0;
             if (p.SatisFiyat < 0) p.SatisFiyat = 0;
 
             var urun = _context.Uruns.Find(p.UrunId);
-            if (urun == null) return NotFound();
+            if (urun == null)
+            {
+                TempData["DbError"] = "Ürün bulunamadı.";
+                return RedirectToAction(nameof(Index));
+            }
 
-            urun.UrunAd = p.UrunAd;
-            urun.Marka = p.Marka;
+            urun.UrunAd = (p.UrunAd ?? "").Trim();
+            urun.Marka = (p.Marka ?? "").Trim();
             urun.Stok = p.Stok;
             urun.AlisFiyat = p.AlisFiyat;
             urun.SatisFiyat = p.SatisFiyat;
             urun.Durum = p.Durum;
             urun.KategoriId = p.KategoriId;
 
-            // 🔹 Yeni görsel yüklenmişse eskiyi sil
             if (YeniGorsel != null && YeniGorsel.Length > 0)
             {
                 if (!string.IsNullOrEmpty(urun.UrunGorsel))
@@ -176,24 +164,16 @@ namespace MVCTicariOtomasyonWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // 🔹 Ürün Sil
         public IActionResult Sil(int id)
         {
             var urun = _context.Uruns.Find(id);
-            if (urun != null)
-            {
-                if (!string.IsNullOrEmpty(urun.UrunGorsel))
-                {
-                    string path = Path.Combine(_env.WebRootPath, urun.UrunGorsel.TrimStart('/'));
-                    if (System.IO.File.Exists(path))
-                        System.IO.File.Delete(path);
-                }
+            if (urun == null)
+                return NotFound();
 
-                _context.Uruns.Remove(urun);
-                _context.SaveChanges();
-                TempData["Success"] = "Ürün silindi.";
-            }
+            urun.Durum = false;
+            _context.SaveChanges();
 
+            TempData["Success"] = "Ürün pasif hale getirildi.";
             return RedirectToAction(nameof(Index));
         }
     }

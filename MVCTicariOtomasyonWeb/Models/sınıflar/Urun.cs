@@ -28,9 +28,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string UrunGorsel { get; set; }
-
-
-        //ilişkiler
+        
 
         //İlişki: her ürün bir kategoriye ait
         public int KategoriId { get; set; }

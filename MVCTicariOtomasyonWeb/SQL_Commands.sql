@@ -50,3 +50,20 @@ SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES;
 
 USE MVCTicariOtomasyon;
 SELECT * FROM Uruns;
+
+
+
+USE MVCTicariOtomasyon;
+GO
+
+ALTER TABLE Uruns
+ADD CONSTRAINT FK_Uruns_Kategoris_KategoriId
+FOREIGN KEY (KategoriId)
+REFERENCES Kategoris(KategoriId)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+GO
+
+
+EXEC sp_helpconstraint 'Uruns';
+GO

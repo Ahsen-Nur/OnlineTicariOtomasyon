@@ -12,6 +12,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         [StringLength(30)]
         [Column(TypeName = "varchar(30)")] // İstersen bu satırı tamamen silebilirsin.
         public string KategoriAd { get; set; } = string.Empty;
+        public bool Durum { get; set; } = true;
 
         // Navigation
         public ICollection<Urun>? Uruns { get; set; }

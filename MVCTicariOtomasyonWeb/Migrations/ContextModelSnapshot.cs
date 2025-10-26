@@ -209,6 +209,11 @@ namespace MVCTicariOtomasyonWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KategoriId"));
 
+                    b.Property<bool>("Durum")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
                     b.Property<string>("KategoriAd")
                         .IsRequired()
                         .HasMaxLength(30)
@@ -305,7 +310,9 @@ namespace MVCTicariOtomasyonWeb.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("Durum")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<int>("KategoriId")
                         .HasColumnType("int");
@@ -392,7 +399,7 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Kategori", "Kategori")
                         .WithMany("Uruns")
                         .HasForeignKey("KategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Kategori");

@@ -19,22 +19,41 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public DbSet<SatisHareket> SatisHarekets { get; set; }
         public DbSet<Urun> Uruns { get; set; }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=MVCTicariOtomasyon;User Id=sa;Password=Ahsennur#2025;TrustServerCertificate=True;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=localhost,1433;Database=MVCTicariOtomasyon;User Id=sa;Password=Ahsennur#2025;TrustServerCertificate=True;");
+            }
         }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Kategori kolon kısıtlamaları
             modelBuilder.Entity<Kategori>()
                 .Property(k => k.KategoriAd)
                 .HasMaxLength(30)
                 .IsRequired()
                 .IsUnicode(false);
+
+            // Varsayılan aktiflik
+            modelBuilder.Entity<Kategori>()
+                .Property(k => k.Durum)
+                .HasDefaultValue(true);
+
+            modelBuilder.Entity<Urun>()
+                .Property(u => u.Durum)
+                .HasDefaultValue(true);
+
+            // Kategori silinince ürünler silinmesin (Restrict)
+            modelBuilder.Entity<Urun>()
+                .HasOne(u => u.Kategori)
+                .WithMany(k => k.Uruns)
+                .HasForeignKey(u => u.KategoriId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
-
-
     }
 }
