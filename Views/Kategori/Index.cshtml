@@ -1,0 +1,86 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Kategori>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Kategori Listesi";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <!-- TempData mesajları -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+    @if (TempData["DbError"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["DbError"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+    @if (TempData["ModelErrors"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["ModelErrors"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-gradient-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-tags me-2"></i>Kategoriler</h5>
+
+            <!-- Eskiden: href="/Kategori/YeniKategori" -->
+            <a asp-controller="Kategori" asp-action="YeniKategori"
+               class="btn btn-light btn-sm fw-bold"
+               data-bs-toggle="tooltip" data-bs-placement="left"
+               title="Yeni kategori ekle">
+                <i class="fas fa-plus-circle me-1"></i>Yeni Ekle
+            </a>
+        </div>
+
+        <div class="card-body bg-light">
+            <table class="table table-borderless align-middle">
+                <thead class="table-light border-bottom">
+                    <tr>
+                        <th style="width: 10%">ID</th>
+                        <th style="width: 70%">Kategori Adı</th>
+                        <th style="width: 20%" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.KategoriId</td>
+                            <td>@item.KategoriAd</td>
+                            <td class="text-center">
+
+                                <!-- Düzenle -->
+                                <a asp-controller="Kategori" asp-action="Guncelle" asp-route-id="@item.KategoriId"
+                                   class="btn btn-sm btn-outline-warning me-1"
+                                   data-bs-toggle="tooltip" data-bs-placement="top"
+                                   title="Kategoriyi Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <!-- Sil -->
+                                <a asp-controller="Kategori" asp-action="Sil" asp-route-id="@item.KategoriId"
+                                   class="btn btn-sm btn-outline-danger"
+                                   data-bs-toggle="tooltip" data-bs-placement="top"
+                                   title="Kategoriyi Sil">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

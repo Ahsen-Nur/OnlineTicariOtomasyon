@@ -1,0 +1,145 @@
+@{
+    ViewBag.Title = "İstatistikler";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin-bottom: 25px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 35px 0 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title i {
+        color: #5f6cff;
+        font-size: 18px;
+    }
+
+    .stat-card {
+        padding: 16px 18px;
+        border-radius: 12px;
+        background: #f8f9fb;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .stat-title {
+        font-size: 13px;
+        color: #6c757d;
+        margin-bottom: 6px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .soft-blue   { background: #e4ecff; }
+    .soft-green  { background: #e3f5ea; }
+    .soft-purple { background: #eee8ff; }
+    .soft-orange { background: #ffefe2; }
+    .soft-red    { background: #fde2e2; }
+    .soft-gray   { background: #e9ecef; }
+
+    /* 🔹 Kategorik Stok */
+    .category-stock {
+        margin-top: 12px;
+    }
+
+    .category-row {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .category-name {
+        width: 110px;
+        color: #495057;
+    }
+
+    .category-bar {
+        flex: 1;
+        height: 6px;
+        background: #dee2e6;
+        border-radius: 6px;
+        margin: 0 10px;
+        overflow: hidden;
+    }
+
+    .category-bar-fill {
+        height: 100%;
+        background: #5f6cff;
+        border-radius: 6px;
+    }
+
+    .category-value {
+        width: 40px;
+        text-align: right;
+        font-weight: 600;
+    }
+</style>
+
+<h2 class="section-title"><i class="fa fa-chart-line"></i> Genel Durum</h2>
+<div class="dashboard-grid">
+    <div class="stat-card soft-blue"><div class="stat-title">Toplam Cari</div><div class="stat-value">@ViewBag.d1</div></div>
+    <div class="stat-card soft-green"><div class="stat-title">Ürün Sayısı</div><div class="stat-value">@ViewBag.d2</div></div>
+    <div class="stat-card soft-purple"><div class="stat-title">Personel Sayısı</div><div class="stat-value">@ViewBag.d3</div></div>
+    <div class="stat-card soft-orange"><div class="stat-title">Kategori Sayısı</div><div class="stat-value">@ViewBag.d4</div></div>
+</div>
+
+<h2 class="section-title"><i class="fa fa-box"></i> Ürün & Stok</h2>
+<div class="dashboard-grid">
+    <div class="stat-card soft-green">
+        <div class="stat-title">Toplam Stok</div>
+        <div class="stat-value">@ViewBag.d5</div>
+
+        <!-- 🔹 Kategorik Stok Dağılımı -->
+        <div class="category-stock">
+            @foreach (var item in ViewBag.KategoriStoklari)
+            {
+                <div class="category-row">
+                    <div class="category-name">@item.Kategori</div>
+                    <div class="category-bar">
+                        <div class="category-bar-fill"
+                             style="width:@(item.ToplamStok * 100 / ViewBag.d5)%">
+                        </div>
+                    </div>
+                    <div class="category-value">@item.ToplamStok</div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="stat-card soft-red">
+        <div class="stat-title">Kritik Seviye</div>
+        <div class="stat-value">@ViewBag.d7</div>
+    </div>
+</div>
+
+<h2 class="section-title"><i class="fa fa-coins"></i> Satış & Fiyat</h2>
+<div class="dashboard-grid">
+    <div class="stat-card soft-purple"><div class="stat-title">Max Fiyatlı Ürün</div><div class="stat-value">@ViewBag.d8</div></div>
+    <div class="stat-card soft-orange"><div class="stat-title">Min Fiyatlı Ürün</div><div class="stat-value">@ViewBag.d9</div></div>
+    <div class="stat-card soft-blue"><div class="stat-title">En Çok Satan</div><div class="stat-value">@ViewBag.d13</div></div>
+    <div class="stat-card soft-gray"><div class="stat-title">En Az Satan</div><div class="stat-value">@ViewBag.d17</div></div>
+</div>
+
+<h2 class="section-title"><i class="fa fa-calendar-day"></i> Günlük Durum</h2>
+<div class="dashboard-grid">
+    <div class="stat-card soft-green"><div class="stat-title">Bugünkü Satış</div><div class="stat-value">@ViewBag.d15</div></div>
+    <div class="stat-card soft-gray"><div class="stat-title">Bugünkü Kasa</div><div class="stat-value">@ViewBag.d16 ₺</div></div>
+    <div class="stat-card soft-blue"><div class="stat-title">Bugün Satılan Ürün</div><div class="stat-value">@ViewBag.d21</div></div>
+    <div class="stat-card soft-purple"><div class="stat-title">Ortalama Sepet</div><div class="stat-value">@ViewBag.d20 ₺</div></div>
+</div>

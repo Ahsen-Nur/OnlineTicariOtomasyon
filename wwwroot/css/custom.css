@@ -1,0 +1,49 @@
+.card-header {
+    background: linear-gradient(90deg, #4e73df 0%, #224abe 100%);
+    font-weight: 500;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8f9fc;
+    transition: 0.2s;
+}
+
+.btn-outline-warning:hover,
+.btn-outline-danger:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+.tooltip-inner {
+    background-color: #224abe; /* Mavi ton */
+    font-weight: 500;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+.tooltip.show {
+    opacity: 0.95;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Flaticon ikonlarının görünmesini zorunlu hale getirir */
+i.fi, i[class*="fi-"] {
+    font-family: 'uicons-regular-rounded' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Bold Rounded (fi-br) seti için özel font-family */
+i.fi-br {
+    font-family: 'uicons-bold-rounded' !important;
+}
+
+/* Solid Rounded (fi-sr) seti için özel font-family */
+i.fi-sr {
+    font-family: 'uicons-solid-rounded' !important;
+}
+

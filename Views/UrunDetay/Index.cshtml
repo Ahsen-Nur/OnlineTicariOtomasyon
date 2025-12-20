@@ -1,0 +1,128 @@
+@model MVCTicariOtomasyonWeb.Models.ViewModels.UrunDetayViewModel
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <div class="row">
+
+            <!-- SOL: GÖRSEL -->
+            <div class="col-md-4 text-center">
+                <img src="@Model.Urun.UrunGorsel"
+                     class="img-fluid rounded mb-3"
+                     style="max-height:260px; object-fit:contain;" />
+
+                <a href="/Satis/Yeni/@Model.Urun.UrunId"
+                   class="btn btn-primary btn-block">
+                    <i class="fas fa-cart-plus"></i> Satış Listesine Ekle
+                </a>
+            </div>
+
+            <!-- SAĞ: BİLGİLER -->
+            <div class="col-md-8">
+
+                <h3 class="mb-0">@Model.Urun.UrunAd</h3>
+                <small class="text-muted">@Model.Urun.Marka</small>
+
+                <div class="h4 text-success mt-2">
+                    @Model.Urun.SatisFiyat.ToString("N2") ₺
+                </div>
+
+                <hr />
+
+                <!-- ÜRÜN ÖZELLİKLERİ -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">Ürün Özellikleri</h5>
+                    <a href="/UrunOzellik/Ekle/@Model.Urun.UrunId"
+                       class="btn btn-sm btn-outline-primary">
+                        + Özellik Ekle
+                    </a>
+                </div>
+
+                @if (Model.Ozellikler.Any())
+                {
+                    var grupluOzellikler =
+                        Model.Ozellikler.GroupBy(x => x.Ozellik.OzellikAd);
+
+                    foreach (var grup in grupluOzellikler)
+                    {
+                        <div class="mb-3">
+                            <strong>@grup.Key</strong>
+
+                            <div class="mt-2">
+                                @foreach (var item in grup)
+                                {
+                                    <span class="badge badge-light border px-2 py-1 mr-1 text-dark">
+
+                                        @item.Deger
+                                        <a href="/UrunOzellik/Sil/@item.Id"
+                                           class="text-danger ml-1"
+                                           title="Sil"
+                                           onclick="return confirm('Bu değeri silmek istiyor musunuz?')">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">Henüz özellik eklenmemiş.</p>
+                }
+
+                <hr />
+
+                <!-- AÇIKLAMA -->
+                <h5>Açıklama</h5>
+                @if (!string.IsNullOrWhiteSpace(Model.Aciklama?.Metin))
+                {
+                    <p>@Model.Aciklama.Metin</p>
+                }
+                else
+                {
+                    <p class="text-muted">Açıklama girilmemiş.</p>
+                }
+
+                <a href="/UrunAciklama/Ekle/@Model.Urun.UrunId"
+                   class="btn btn-sm btn-outline-info mb-3">
+                    Açıklama Düzenle
+                </a>
+
+                <hr />
+
+                <!-- YORUMLAR -->
+                <h5>Yorumlar</h5>
+                @if (Model.Yorumlar.Any())
+                {
+                    @foreach (var y in Model.Yorumlar)
+                    {
+                        <div class="mb-3">
+                            <strong>@y.KullaniciAd</strong>
+                            <small class="text-muted">
+                                (@y.Tarih.ToShortDateString())
+                            </small>
+                            <div>@y.Yorum</div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">Henüz yorum yapılmamış.</p>
+                }
+
+            </div>
+        </div>
+
+        <hr />
+
+        <a href="/Urun/Index"
+           class="btn btn-sm btn-outline-secondary">
+            ← Ürün Listesine Dön
+        </a>
+
+    </div>
+</div>

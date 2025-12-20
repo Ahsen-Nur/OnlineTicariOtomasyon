@@ -1,0 +1,72 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Faturalar
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Fatura Güncelle";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0"><i class="bi bi-pencil-square"></i> Fatura Güncelle</h5>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+                <input type="hidden" name="FaturaId" value="@Model.FaturaId" />
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Seri No</label>
+                        <input class="form-control" name="FaturaSeriNo" value="@Model.FaturaSeriNo" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Sıra No</label>
+                        <input class="form-control" name="FaturaSıraNo" value="@Model.FaturaSıraNo" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Vergi Dairesi</label>
+                        <input class="form-control" name="VergiDairesi" value="@Model.VergiDairesi" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Tarih</label>
+                        <input type="date"
+                               class="form-control"
+                               name="Tarih"
+                               value="@Model.Tarih.ToString("yyyy-MM-dd")" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Saat</label>
+                        <input type="time"
+                               class="form-control"
+                               name="Saat"
+                               value="@Model.Saat" />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Teslim Eden</label>
+                    <input class="form-control" name="TeslimEden" value="@Model.TeslimEden" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Teslim Alan</label>
+                    <input class="form-control" name="TeslimAlan" value="@Model.TeslimAlan" />
+                </div>
+
+                <button class="btn btn-warning fw-semibold">Güncelle</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>

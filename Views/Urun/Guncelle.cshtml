@@ -1,0 +1,111 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Urun
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Ürün Güncelle";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <!-- 🔹 TempData mesajları -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["DbError"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["DbError"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ModelErrors"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["ModelErrors"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-gradient-warning text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-edit me-2"></i>Ürün Güncelle</h5>
+            <a asp-controller="Urun" asp-action="Index" class="btn btn-light btn-sm fw-bold">
+                <i class="fas fa-arrow-left me-1"></i>Geri Dön
+            </a>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ürün ID</label>
+            <input asp-for="UrunId" class="form-control" readonly />
+        </div>
+
+
+        <div class="card-body bg-light">
+            <form method="post" asp-action="Guncelle" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="UrunId" />
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Ürün Adı</label>
+                        <input asp-for="UrunAd" class="form-control" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Marka</label>
+                        <input asp-for="Marka" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Stok</label>
+                        <input asp-for="Stok" type="number" class="form-control"
+                               min="0" oninput="this.value=Math.abs(this.value)" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Alış Fiyatı</label>
+                        <input asp-for="AlisFiyat" type="number" step="0.01" class="form-control"
+                               min="0" oninput="this.value=Math.abs(this.value)" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Satış Fiyatı</label>
+                        <input asp-for="SatisFiyat" type="number" step="0.01" class="form-control"
+                               min="0" oninput="this.value=Math.abs(this.value)" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label fw-bold">Durum</label>
+                        <select asp-for="Durum" class="form-select">
+                            <option value="true">Aktif</option>
+                            <option value="false">Pasif</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label fw-bold">Kategori</label>
+                        <select asp-for="KategoriId" asp-items="ViewBag.Kategoriler" class="form-select">
+                            <option value="">Kategori Seçiniz</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label class="form-label fw-bold">Yeni Görsel (isteğe bağlı)</label>
+                    <input type="file" name="YeniGorsel" class="form-control" accept="image/*" />
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary fw-bold">
+                        <i class="fas fa-save me-1"></i>Güncelle
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

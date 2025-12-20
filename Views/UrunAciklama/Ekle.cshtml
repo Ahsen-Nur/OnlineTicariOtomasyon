@@ -1,0 +1,22 @@
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Ürün Açıklaması Ekle</h3>
+
+<form method="post">
+    <input type="hidden" name="UrunId" value="@ViewBag.UrunId" />
+
+    <div class="form-group">
+        <label>Açıklama</label>
+        <textarea name="Metin" class="form-control" rows="6"></textarea>
+    </div>
+
+    <button class="btn btn-success">Kaydet</button>
+</form>
+
+<a href="/UrunDetay/Index/@ViewBag.UrunId"
+   class="btn btn-secondary mt-2">
+    Geri
+</a>
+

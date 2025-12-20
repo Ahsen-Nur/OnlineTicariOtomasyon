@@ -1,0 +1,30 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Satış Detayı";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-info text-white">
+            <h5 class="mb-0"><i class="bi bi-eye"></i> Satış Detayı</h5>
+        </div>
+
+        <div class="card-body">
+
+            <p><strong>Ürün:</strong> @Model.Urun.UrunAd</p>
+            <p><strong>Cari:</strong> @Model.Cariler.CariAd @Model.Cariler.CariSoyad</p>
+            <p><strong>Personel:</strong> @Model.Personel.PersonelAd @Model.Personel.PersonelSoyad</p>
+            <p><strong>Adet:</strong> @Model.Adet</p>
+            <p><strong>Fiyat:</strong> @Model.Fiyat</p>
+            <p><strong>Toplam:</strong> @Model.ToplamTutar</p>
+            <p><strong>Tarih:</strong> @Model.Tarih.ToShortDateString()</p>
+
+            <a asp-action="Index" class="btn btn-secondary mt-2">Geri</a>
+
+        </div>
+    </div>
+</div>

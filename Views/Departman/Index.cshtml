@@ -1,0 +1,106 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Departman>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Departmanlar";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+        <!-- Başlık Alanı -->
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-building"></i> Departmanlar</h5>
+            <a asp-controller="Departman" asp-action="YeniDepartman"
+               class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-plus-circle"></i> Yeni Ekle
+            </a>
+        </div>
+
+        <!-- İçerik -->
+        <div class="card-body">
+
+            <!-- Mesajlar -->
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Success"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+                </div>
+            }
+            @if (TempData["DbError"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["DbError"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Kapat"></button>
+                </div>
+            }
+
+            <!-- Departman Tablosu -->
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr class="table-light">
+                        <th style="width:10%">ID</th>
+                        <th style="width:60%">Departman Adı</th>
+                        <th style="width:30%" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        @foreach (var d in Model)
+                        {
+                            <tr>
+                                <td>@d.DepartmanId</td>
+                                <td>@d.DepartmanAd</td>
+                                <td class="text-center">
+                                    <!-- Güncelle -->
+                                    <a asp-controller="Departman"
+                                       asp-action="Guncelle"
+                                       asp-route-id="@d.DepartmanId"
+                                       class="btn btn-warning btn-sm me-1"
+                                       title="Güncelle">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <!-- Sil -->
+                                    <form asp-controller="Departman"
+                                          asp-action="Sil"
+                                          asp-route-id="@d.DepartmanId"
+                                          method="post"
+                                          class="d-inline"
+                                          onsubmit="return confirm('Bu departmanı silmek istiyor musunuz?');">
+                                        <button type="submit" class="btn btn-danger btn-sm me-1" title="Sil">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </form>
+
+                                    <!-- Detay -->
+                                    <a asp-controller="Departman"
+                                       asp-action="Detay"
+                                       asp-route-id="@d.DepartmanId"
+                                       class="btn btn-info btn-sm text-white"
+                                       title="Detay">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center text-muted py-4">
+                                Henüz departman eklenmemiş.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-3 text-muted small">
+        © Ticari Otomasyon 2025
+    </div>
+</div>

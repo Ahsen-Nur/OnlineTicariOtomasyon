@@ -1,0 +1,46 @@
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+
+        <h4>Ürün Özelliği Ekle</h4>
+
+        <form method="post">
+
+            <input type="hidden" name="UrunId" value="@ViewBag.UrunId" />
+
+            <div class="form-group">
+                <label>Özellik</label>
+                <select name="OzellikId" class="form-control">
+                    <option value="">Seçiniz</option>
+                    @foreach (var o in ViewBag.Ozellikler)
+                    {
+                        <option value="@o.OzellikId">@o.OzellikAd</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Değer</label>
+                <input type="text"
+                       name="Deger"
+                       class="form-control"
+                       placeholder="Örn: Kırmızı, A++, 3-6 Yaş"
+                       required  />
+            </div>
+
+            <div class="mt-3">
+                <button class="btn btn-success">Kaydet</button>
+
+                <a href="/UrunDetay/Index/@ViewBag.UrunId"
+                   class="btn btn-secondary ml-2">
+                    Geri
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+</div>

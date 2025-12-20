@@ -1,0 +1,60 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Personel Satışları";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="bi bi-bar-chart-line"></i> @ViewBag.PersonelAd – Satış Geçmişi
+            </h5>
+
+            <a asp-controller="Personel" asp-action="Index"
+               class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-arrow-left"></i> Geri
+            </a>
+        </div>
+
+        <div class="card-body">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center">
+                    Bu personele ait satış bulunmuyor.
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="table-light text-center">
+                            <th>ID</th>
+                            <th>Ürün</th>
+                            <th>Cari</th>
+                            <th>Adet</th>
+                            <th>Fiyat</th>
+                            <th>Toplam</th>
+                            <th>Tarih</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var s in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@s.SatisId</td>
+                                <td>@s.Urun.UrunAd</td>
+                                <td>@s.Cariler.CariAd @s.Cariler.CariSoyad</td>
+                                <td>@s.Adet</td>
+                                <td>@s.Fiyat</td>
+                                <td>@s.ToplamTutar</td>
+                                <td>@s.Tarih.ToShortDateString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>

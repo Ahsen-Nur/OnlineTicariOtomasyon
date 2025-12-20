@@ -1,0 +1,29 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Departman
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Yeni Departman";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Yeni Departman Ekle</h5>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="YeniDepartman" method="post">
+                @Html.AntiForgeryToken()
+                <div class="mb-3">
+                    <label class="form-label">Departman Adı</label>
+                    <input asp-for="DepartmanAd" class="form-control" placeholder="Departman adını giriniz" />
+                    <span asp-validation-for="DepartmanAd" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-save"></i> Kaydet
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">Geri</a>
+            </form>
+        </div>
+    </div>
+</div>

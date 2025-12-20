@@ -1,0 +1,99 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Urun>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Ürün Listesi";
+}
+
+<div class="container-fluid px-4 mt-4">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-gradient-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="fas fa-box me-2"></i>Ürünler</h5>
+            <a asp-controller="Urun" asp-action="YeniUrun" class="btn btn-light btn-sm fw-bold">
+                <i class="fas fa-plus-circle me-1"></i>Yeni Ekle
+            </a>
+        </div>
+
+        <div class="card-body bg-light">
+            <table class="table table-borderless align-middle">
+                <thead class="table-light border-bottom">
+                    <tr>
+                        <th>Ürün ID</th>
+                        <th>Görsel</th>
+                        <th>Ürün Adı</th>
+                        <th>Marka</th>
+                        <th>Stok</th>
+                        <th>Fiyat</th>
+                        <th>Kategori</th>
+                        <th>Durum</th>
+                        <th class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.UrunId</td>
+                            <td style="width:80px;">
+                                @if (!string.IsNullOrEmpty(item.UrunGorsel))
+                                {
+                                    <img src="@item.UrunGorsel" alt="Ürün Görseli" width="60" height="60" class="rounded shadow-sm" />
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+                            <td>@item.UrunAd</td>
+                            <td>@item.Marka</td>
+
+                            <!-- 🔸 Stok etiketi -->
+                            <td>
+                                @if (item.Stok == 0)
+                                {
+                                    <span class="badge bg-danger">Tükendi</span>
+                                }
+                                else if (item.Stok < 10)
+                                {
+                                    <span class="badge bg-warning text-dark">@item.Stok</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success">@item.Stok</span>
+                                }
+                            </td>
+
+                            <td>@item.SatisFiyat ₺</td>
+                            <td>@item.Kategori?.KategoriAd</td>
+                            <td>@(item.Durum ? "Aktif" : "Pasif")</td>
+                            <td class="text-center">
+                                <a asp-controller="Urun" asp-action="Guncelle" asp-route-id="@item.UrunId"
+                                   class="btn btn-sm btn-outline-warning me-1" title="Düzenle">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a asp-controller="Urun" asp-action="Sil" asp-route-id="@item.UrunId"
+                                   class="btn btn-sm btn-outline-danger" title="Sil"
+                                   onclick="return confirm('Bu ürünü silmek istediğinize emin misiniz?');">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+
+                                <a href="/UrunDetay/Index/@item.UrunId" 
+                                    class="btn btn-info btn-sm" title="Ürün Detay">
+                                    <i class="fas fa-search"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

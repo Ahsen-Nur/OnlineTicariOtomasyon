@@ -1,0 +1,79 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Personel>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Departman Detay";
+}
+
+<div class="container-fluid px-4 mt-4">
+    <div class="card shadow-sm border-0">
+        <!-- Başlık -->
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="bi bi-people"></i> @ViewBag.DepartmanAd Departmanı – Personeller
+            </h5>
+            <a asp-controller="Departman" asp-action="Index" class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-arrow-left"></i> Geri
+            </a>
+        </div>
+
+        <!-- İçerik -->
+        <div class="card-body">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr class="table-light text-center">
+                        <th style="width:10%">ID</th>
+                        <th style="width:25%">Ad Soyad</th>
+                        <th style="width:20%">Görsel</th>
+                        <th style="width:20%">Satışlar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var p in Model)
+                        {
+                            <tr class="text-center">
+                                <td>@p.PersonelId</td>
+
+                                <td>@p.PersonelAd @p.PersonelSoyad</td>
+
+                                <td>
+                                    @if (!string.IsNullOrWhiteSpace(p.PersonelGorsel))
+                                    {
+                                        <img src="@p.PersonelGorsel" alt="Personel" width="70" class="rounded" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">—</span>
+                                    }
+                                </td>
+
+                                <td>
+                                    <a asp-controller="Departman"
+                                       asp-action="PersonelSatis"
+                                       asp-route-id="@p.PersonelId"
+                                       class="btn btn-info btn-sm text-white"
+                                       title="Satışları Gör">
+                                        <i class="bi bi-bar-chart-line"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-muted py-4">
+                                Bu departmanda aktif personel bulunmuyor.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="text-center mt-3 text-muted small">
+        © Ticari Otomasyon 2025
+    </div>
+</div>

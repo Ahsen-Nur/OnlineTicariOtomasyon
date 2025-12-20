@@ -1,0 +1,74 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Yeni Satış";
+}
+
+<div class="container mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Yeni Satış Ekle</h5>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Ürün</label>
+                    <select asp-for="UrunId" class="form-select">
+                        @foreach (var u in ViewBag.Urunler)
+                        {
+                            <option value="@u.UrunId">@u.UrunAd</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Cari</label>
+                    <select asp-for="CariId" class="form-select">
+                        @foreach (var c in ViewBag.Cariler)
+                        {
+                            <option value="@c.CariId">@c.CariAd @c.CariSoyad</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Personel</label>
+                    <select asp-for="PersonelId" class="form-select">
+                        @foreach (var p in ViewBag.Personeller)
+                        {
+                            <option value="@p.PersonelId">@p.PersonelAd @p.PersonelSoyad</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Adet</label>
+                        <input asp-for="Adet" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Fiyat</label>
+                        <input asp-for="Fiyat" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Toplam Tutar</label>
+                        <input class="form-control" disabled value="Otomatik Hesaplanacak" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+                <a asp-action="Index" class="btn btn-secondary">Geri</a>
+
+            </form>
+
+        </div>
+    </div>
+</div>

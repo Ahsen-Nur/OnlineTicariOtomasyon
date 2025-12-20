@@ -1,0 +1,83 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Cariler>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Cariler";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-person-vcard"></i> Cariler</h5>
+
+            <a asp-controller="Cariler" asp-action="YeniCari"
+               class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-plus-circle"></i> Yeni Ekle
+            </a>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr class="table-light text-center">
+                        <th>ID</th>
+                        <th>Ad Soyad</th>
+                        <th>Şehir</th>
+                        <th>Mail</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var c in Model)
+                    {
+                        <tr class="text-center">
+                            <td>@c.CariId</td>
+                            <td>@c.CariAd @c.CariSoyad</td>
+                            <td>@c.CariSehir</td>
+                            <td>@c.CariMail</td>
+
+                            <td>
+                                <!-- SATIŞ GEÇMİŞİ (DETAY) -->
+                                <a asp-controller="Cariler"
+                                   asp-action="CariSatis"
+                                   asp-route-id="@c.CariId"
+                                   class="btn btn-info btn-sm me-1 text-white"
+                                   title="Satış Geçmişi">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                </a>
+
+                                <!-- GÜNCELLE -->
+                                <a asp-controller="Cariler"
+                                   asp-action="Guncelle"
+                                   asp-route-id="@c.CariId"
+                                   class="btn btn-warning btn-sm me-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                                <!-- SİL -->
+                                <form asp-controller="Cariler"
+                                      asp-action="Sil"
+                                      asp-route-id="@c.CariId"
+                                      method="post" class="d-inline"
+                                      onsubmit="return confirm('Bu cariyi silmek istiyor musunuz?');">
+
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="text-center mt-3 text-muted small">
+        © Ticari Otomasyon 2025
+    </div>
+</div>

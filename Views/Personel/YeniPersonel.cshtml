@@ -1,0 +1,70 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.Personel
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Yeni Personel";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0 rounded-3">
+
+        <div class="card-header bg-gradient-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="fas fa-user-plus me-2"></i> Yeni Personel Ekle
+            </h5>
+
+            <a asp-controller="Personel" asp-action="Index"
+               class="btn btn-light btn-sm fw-bold">
+                <i class="fas fa-arrow-left me-1"></i>Geri
+            </a>
+        </div>
+
+        <div class="card-body bg-light">
+
+            <form asp-action="YeniPersonel" method="post" class="mt-2">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Ad</label>
+                    <input asp-for="PersonelAd" class="form-control" />
+                    <span asp-validation-for="PersonelAd" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Soyad</label>
+                    <input asp-for="PersonelSoyad" class="form-control" />
+                    <span asp-validation-for="PersonelSoyad" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Görsel URL</label>
+                    <input asp-for="PersonelGorsel" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Departman</label>
+
+                    <select asp-for="DepartmanId"
+                            class="form-select"
+                            asp-items="@(new SelectList(ViewBag.Departmanlar, "Value", "Text", Model?.DepartmanId))">
+                        <option value="">-- Seçiniz --</option>
+                    </select>
+
+                    <span asp-validation-for="DepartmanId" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary fw-semibold px-4">
+                        <i class="fas fa-save me-1"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

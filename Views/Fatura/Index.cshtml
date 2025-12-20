@@ -1,0 +1,83 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Faturalar>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Faturalar";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-file-earmark-text"></i> Faturalar</h5>
+
+            <a asp-controller="Fatura" asp-action="YeniFatura"
+               class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-plus-circle"></i> Yeni Fatura
+            </a>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr class="table-light text-center">
+                        <th>ID</th>
+                        <th>Seri</th>
+                        <th>Sıra No</th>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Vergi Dairesi</th>
+                        <th>Teslim Eden</th>
+                        <th>Teslim Alan</th>
+                        <th>Toplam</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var f in Model)
+                    {
+                        // toplam = faturaId'ye bağlı tüm kalemlerin tutarı
+                        var toplam = f.FaturaKalems?.Sum(x => x.Tutar) ?? 0;
+
+                        <tr class="text-center">
+                            <td>@f.FaturaId</td>
+                            <td>@f.FaturaSeriNo</td>
+                            <td>@f.FaturaSıraNo</td>
+                            <td>@f.Tarih.ToShortDateString()</td>
+                            <td>@f.Saat</td>
+                            <td>@f.VergiDairesi</td>
+                            <td>@f.TeslimEden</td>
+                            <td>@f.TeslimAlan</td>
+
+                            <td class="fw-bold">@toplam ₺</td>
+
+                            <td>
+
+                                <!-- DETAY -->
+                                <a asp-controller="Fatura"
+                                   asp-action="Detay"
+                                   asp-route-id="@f.FaturaId"
+                                   class="btn btn-info btn-sm me-1 text-white">
+                                    <i class="bi bi-list-ul"></i>
+                                </a>
+
+                                <!-- GÜNCELLE -->
+                                <a asp-controller="Fatura"
+                                   asp-action="Guncelle"
+                                   asp-route-id="@f.FaturaId"
+                                   class="btn btn-warning btn-sm me-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>

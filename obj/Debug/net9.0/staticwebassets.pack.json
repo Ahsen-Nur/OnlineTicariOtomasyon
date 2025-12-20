@@ -1,0 +1,381 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/scopedcss/projectbundle/MVCTicariOtomasyonWeb.bundle.scp.css",
+      "PackagePath": "staticwebassets/MVCTicariOtomasyonWeb.g4new1715l.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/custom.css",
+      "PackagePath": "staticwebassets/css/custom.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/1-nadia-koltuk-takimi-07_b10q_icjn.webp",
+      "PackagePath": "staticwebassets/images/urunler/1-nadia-koltuk-takimi-07_b10q_icjn.webp"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/10067130-DFbDWXXO7e-01_1024x1024.jpg_4roo_klrb.webp",
+      "PackagePath": "staticwebassets/images/urunler/10067130-DFbDWXXO7e-01_1024x1024.jpg_4roo_klrb.webp"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/ASSET_MMS_149090349_eku1_jpnh.webp",
+      "PackagePath": "staticwebassets/images/urunler/ASSET_MMS_149090349_eku1_jpnh.webp"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/gipta-the-book-sprsert-defter-a4-ciz140yp-5506-barkod-35373-51-B_pady_iycu.jpg",
+      "PackagePath": "staticwebassets/images/urunler/gipta-the-book-sprsert-defter-a4-ciz140yp-5506-barkod-35373-51-B_pady_iycu.jpg"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/image_4xtl.webp",
+      "PackagePath": "staticwebassets/images/urunler/image_4xtl.webp"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.slim.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/jquery/dist/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/401.html",
+      "PackagePath": "staticwebassets/template/401.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/404.html",
+      "PackagePath": "staticwebassets/template/404.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/500.html",
+      "PackagePath": "staticwebassets/template/500.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/assets/demo/chart-area-demo.js",
+      "PackagePath": "staticwebassets/template/assets/demo/chart-area-demo.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/assets/demo/chart-bar-demo.js",
+      "PackagePath": "staticwebassets/template/assets/demo/chart-bar-demo.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/assets/demo/chart-pie-demo.js",
+      "PackagePath": "staticwebassets/template/assets/demo/chart-pie-demo.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/assets/demo/datatables-demo.js",
+      "PackagePath": "staticwebassets/template/assets/demo/datatables-demo.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/assets/img/error-404-monochrome.svg",
+      "PackagePath": "staticwebassets/template/assets/img/error-404-monochrome.svg"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/charts.html",
+      "PackagePath": "staticwebassets/template/charts.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/css/styles.css",
+      "PackagePath": "staticwebassets/template/css/styles.css"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/index.html",
+      "PackagePath": "staticwebassets/template/index.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/js/datatables-simple-demo.js",
+      "PackagePath": "staticwebassets/template/js/datatables-simple-demo.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/js/scripts.js",
+      "PackagePath": "staticwebassets/template/js/scripts.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/layout-sidenav-light.html",
+      "PackagePath": "staticwebassets/template/layout-sidenav-light.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/layout-static.html",
+      "PackagePath": "staticwebassets/template/layout-static.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/login.html",
+      "PackagePath": "staticwebassets/template/login.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/password.html",
+      "PackagePath": "staticwebassets/template/password.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/register.html",
+      "PackagePath": "staticwebassets/template/register.html"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/template/tables.html",
+      "PackagePath": "staticwebassets/template/tables.html"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.MVCTicariOtomasyonWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.MVCTicariOtomasyonWeb.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.MVCTicariOtomasyonWeb.props",
+      "PackagePath": "build\\MVCTicariOtomasyonWeb.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.MVCTicariOtomasyonWeb.props",
+      "PackagePath": "buildMultiTargeting\\MVCTicariOtomasyonWeb.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.MVCTicariOtomasyonWeb.props",
+      "PackagePath": "buildTransitive\\MVCTicariOtomasyonWeb.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
