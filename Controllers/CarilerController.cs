@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCTicariOtomasyonWeb.Models.sınıflar;
+using MVCTicariOtomasyonWeb.Models.ViewModels;
 using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class CarilerController : Controller
+    public class CarilerController : BaseAdminController
     {
         private readonly Context _context;
         public CarilerController(Context context) => _context = context;
@@ -88,5 +89,6 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
             return View(satislar);
         }
+
     }
 }

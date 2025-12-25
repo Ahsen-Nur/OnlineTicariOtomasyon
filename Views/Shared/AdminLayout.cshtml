@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Http
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -24,21 +25,17 @@
     <!--Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-    <!-- Çakışmayı önleyici özel stiller -->
     <style>
-        /* Font Awesome ikonları için zorunlu font-family */
         i.fa, i.fas, i.fa-solid, i.fa-fw {
             font-family: "Font Awesome 6 Free" !important;
             font-weight: 900 !important;
         }
 
-        /* Flaticon ikonları için doğru font-family */
         i.fi {
             font-family: 'uicons-regular-rounded' !important;
             font-style: normal;
         }
 
-        /* Bazı bold-solid ikonlar için düzeltme */
         i.fi-br {
             font-family: 'uicons-bold-rounded' !important;
         }
@@ -47,7 +44,6 @@
             font-family: 'uicons-solid-rounded' !important;
         }
 
-        /* Boyut uyumlaması (görsel denge) */
         i.fi, i.fa {
             font-size: 1rem;
             vertical-align: middle;
@@ -73,6 +69,10 @@
             </div>
         </div>
 
+        @{
+            var adminId = Context.Session.GetInt32("AdminId");
+            var cariId = Context.Session.GetInt32("CariId");
+        }
 
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -80,10 +80,25 @@
                     <i class="fas fa-user fa-fw"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Ayarlar</a></li>
-                    <li><a class="dropdown-item" href="#!">Hesabım</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">Çıkış Yap</a></li>
+
+                    @if (adminId != null)
+                    {
+                        <li><a class="dropdown-item" href="/Admin/Index">Admin Panel</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/Login/CikisYap">Çıkış Yap</a></li>
+                    }
+                    else if (cariId != null)
+                    {
+                        <li><a class="dropdown-item" href="/Hesabim/Index">Hesabım</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="/Login/CikisYap">Çıkış Yap</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="dropdown-item" href="/Login/GirisYap">Giriş Yap</a></li>
+                        <li><a class="dropdown-item" href="/Login/KayitOl">Kayıt Ol</a></li>
+                    }
+
                 </ul>
             </li>
         </ul>
@@ -124,56 +139,6 @@
                             Personeller
                         </a>
 
-                        <!-- Admin İşlemleri -->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAdmin"
-                           aria-expanded="false" aria-controls="collapseAdmin">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user-shield"></i></div>
-                            Admin İşlemleri
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-
-                        <div class="collapse" id="collapseAdmin" aria-labelledby="headingAdmin" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-
-                                <!-- Yetkilendirme -->
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                   data-bs-target="#collapseAuth" aria-expanded="false" aria-controls="collapseAuth">
-                                    <i class="fas fa-key me-2"></i>Yetkilendirme
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-
-                                <div class="collapse" id="collapseAuth" aria-labelledby="headingAuth" data-bs-parent="#collapseAdmin">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="/Admin/Giris">
-                                            <i class="fas fa-sign-in-alt me-2"></i>Giriş Yap
-                                        </a>
-                                        <a class="nav-link" href="/Admin/Kayit">
-                                            <i class="fas fa-user-plus me-2"></i>Kayıt Ol
-                                        </a>
-                                    </nav>
-                                </div>
-
-                                <!-- Hata Sayfaları -->
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                                   data-bs-target="#collapseError" aria-expanded="false" aria-controls="collapseError">
-                                    <i class="fas fa-exclamation-triangle me-2"></i>Hata Sayfaları
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-
-                                <div class="collapse" id="collapseError" aria-labelledby="headingError" data-bs-parent="#collapseAdmin">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="/Admin/Error404">
-                                            <i class="fas fa-bug me-2"></i>404 Hatası
-                                        </a>
-                                        <a class="nav-link" href="/Admin/Error500">
-                                            <i class="fas fa-skull-crossbones me-2"></i>500 Hatası
-                                        </a>
-                                    </nav>
-                                </div>
-
-                            </nav>
-                        </div>
-
                         <div class="sb-sidenav-menu-heading">Rapor & Fatura</div>
 
                         <a class="nav-link" href="/SatisHareket/Index">
@@ -196,16 +161,15 @@
                             Giderler
                         </a>
 
-                        <!-- Hareketler  ve İstatistikler-->
                         <a class="nav-link" href="/Urun/UrunListesi">
                             <div class="sb-nav-link-icon"><i class="fi fi-tr-file-conversion"></i></div>
                             PDF ~ Excel
                         </a>
+
                         <a class="nav-link" href="/Istatistik/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
                             İstatistikler
                         </a>
-
 
                     </div>
                 </div>
@@ -213,7 +177,6 @@
             </nav>
         </div>
 
-        <!-- Sayfa İçeriği -->
         <div id="layoutSidenav_content">
             <main class="p-3">
                 @RenderBody()
@@ -233,7 +196,6 @@
         </div>
     </div>
 
-    <!-- Scriptler -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="~/template/js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -241,15 +203,8 @@
     <script src="~/template/assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="~/template/js/datatables-simple-demo.js"></script>
-    <script>
-        // Tooltip’leri aktif et
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
-    </script>
 
-    @* >>> GEREKLİ TEK EKLEME: View'lerin tanımladığı Scripts bölümünü yükle *@
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 </html>
-dotnet new

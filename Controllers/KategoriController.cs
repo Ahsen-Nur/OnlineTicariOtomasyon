@@ -15,6 +15,15 @@ namespace MVCTicariOtomasyonWeb.Controllers
             _context = context;
         }
 
+
+        private IActionResult AdminKontrol()
+        {
+            if (HttpContext.Session.GetString("Rol") != "Admin")
+                return RedirectToAction("GirisYap", "Login");
+            return null;
+        }
+
+
         // Kategorileri Listele (sadece aktif olanlar)
         public IActionResult Index()
         {
@@ -23,12 +32,18 @@ namespace MVCTicariOtomasyonWeb.Controllers
                                       .Where(k => k.Durum == true)
                                       .OrderBy(k => k.KategoriId)
                                       .ToList();
+
+            
+                          
             return View(kategoriler);
         }
 
         [HttpGet]
         public IActionResult YeniKategori()
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             return View();
         }
 
@@ -36,6 +51,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult YeniKategori(Kategori k)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             if (!string.IsNullOrWhiteSpace(k?.KategoriAd))
                 k.KategoriAd = k.KategoriAd.Trim();
 
@@ -67,6 +85,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [HttpGet]
         public IActionResult Guncelle(int id)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             var kategori = _context.Kategoris.Find(id);
             if (kategori == null)
                 return NotFound();
@@ -78,6 +99,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Guncelle(Kategori k)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             if (!string.IsNullOrWhiteSpace(k?.KategoriAd))
                 k.KategoriAd = k.KategoriAd.Trim();
 
@@ -103,6 +127,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         // Sil (soft delete) — yalnızca kategoriyi pasif yap, ürünlere dokunma
         public IActionResult Sil(int id)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             var kategori = _context.Kategoris.Find(id);
             if (kategori == null)
                 return NotFound();

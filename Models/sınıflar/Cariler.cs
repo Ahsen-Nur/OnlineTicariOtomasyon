@@ -35,10 +35,14 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
 
         public bool Durum { get; set; } = true;
 
+        [Required(ErrorMessage = "Şifre zorunludur")]
+        [StringLength(50)]
+        public string Sifre { get; set; }
+
 
         //ilişkiler
         
         //Bir cariye ait birden fazla satış olabilir
-        public ICollection<SatisHareket> SatisHarekets { get; set; }
+        public ICollection<SatisHareket>? SatisHarekets { get; set; }
     }
 }

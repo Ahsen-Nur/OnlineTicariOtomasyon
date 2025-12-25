@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class FaturaController : Controller
+    public class FaturaController : BaseAdminController
     {
         private readonly Context _context;
         public FaturaController(Context context) => _context = context;

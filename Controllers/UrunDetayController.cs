@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCTicariOtomasyonWeb.Models.ViewModels;
 using MVCTicariOtomasyonWeb.Models.sınıflar;
+using Microsoft.AspNetCore.Http;
 using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
@@ -17,6 +18,23 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
         public IActionResult Index(int id)
         {
+            bool adminMi = HttpContext.Session.GetInt32("AdminId") != null;
+            ViewBag.AdminMi = adminMi;
+
+            int? cariId = HttpContext.Session.GetInt32("CariId");
+
+            if (cariId != null)
+            {
+                bool satinAlmisMi = _context.SatisHarekets.Any(x =>
+                    x.UrunId == id && x.CariId == cariId.Value);
+
+                ViewBag.YorumYetkisi = satinAlmisMi;
+            }
+            else
+            {
+                ViewBag.YorumYetkisi = false;
+            }
+
             var model = new UrunDetayViewModel
             {
                 Urun = _context.Uruns
@@ -39,6 +57,5 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
             return View(model);
         }
-
     }
 }

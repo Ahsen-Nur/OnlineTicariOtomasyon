@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class PersonelController : Controller
+    public class PersonelController : BaseAdminController
     {
         private readonly Context _context;
 
@@ -24,6 +24,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
                 .Include(p => p.Departman)
                 .Where(p => p.Durum == true)
                 .ToList();
+
 
             return View(personeller);
         }

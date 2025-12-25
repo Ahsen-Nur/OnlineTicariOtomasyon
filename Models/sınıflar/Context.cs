@@ -27,6 +27,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public DbSet<UrunAciklama> UrunAciklamalar { get; set; }
         public DbSet<UrunYorum> UrunYorumlar { get; set; }
         public DbSet<KategoriOzellik> KategoriOzellikler { get; set; }
+        
 
 
 

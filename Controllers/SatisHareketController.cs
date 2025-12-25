@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class SatisHareketController : Controller
+    public class SatisHareketController : BaseAdminController
     {
         private readonly Context _context;
         public SatisHareketController(Context context) => _context = context;
@@ -152,7 +152,66 @@ namespace MVCTicariOtomasyonWeb.Controllers
             _context.SaveChanges();
 
             return RedirectToAction(nameof(Index));
-}
+        }
+
+
+        [HttpPost]
+        public IActionResult SatinAl(int UrunId, int Adet)
+        {
+            int? cariId = HttpContext.Session.GetInt32("CariId");
+            if (cariId == null)
+                return RedirectToAction("GirisYap", "Login");
+
+            var urun = _context.Uruns.Find(UrunId);
+            if (urun == null)
+                return NotFound();
+
+            if (Adet < 1) Adet = 1;
+            if (urun.Stok < Adet)
+            {
+                TempData["Hata"] = "Yeterli stok yok.";
+                return RedirectToAction("Index", "UrunDetay", new { id = UrunId });
+            }
+            urun.Stok -= (short)Adet;
+
+            SatisHareket sh = new SatisHareket
+            {
+                UrunId = UrunId,
+                CariId = cariId.Value,
+                Adet = Adet,
+                Fiyat = urun.SatisFiyat,
+                ToplamTutar = urun.SatisFiyat * Adet,
+                Tarih = DateTime.Now
+            };
+
+            _context.SatisHarekets.Add(sh);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Hesabim");
+        }
+
+
+
+        public IActionResult IptalEt(int id)
+        {
+            int? cariId = HttpContext.Session.GetInt32("CariId");
+            if (cariId == null)
+                return RedirectToAction("GirisYap", "Login");
+
+            var satis = _context.SatisHarekets
+                .Include(x => x.Urun)
+                .FirstOrDefault(x => x.SatisId == id );
+
+            if (satis == null || satis.Durum == false)
+                return RedirectToAction("Index", "Hesabim");
+
+            satis.Durum = false;
+            satis.Urun.Stok += (short)satis.Adet;
+    
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Hesabim");
+
+        }
 
 
     }

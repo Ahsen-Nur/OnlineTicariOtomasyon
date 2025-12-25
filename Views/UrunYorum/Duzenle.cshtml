@@ -1,0 +1,41 @@
+@model MVCTicariOtomasyonWeb.Models.sınıflar.UrunYorum
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <h4>Yorumu Düzenle</h4>
+
+        <form method="post">
+            <input type="hidden" asp-for="YorumId" />
+            <input type="hidden" asp-for="UrunId" />
+
+            <div class="mb-2">
+                <label>Puan</label>
+                <select asp-for="Puan" class="form-control">
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★</option>
+                    <option value="3">★★★</option>
+                    <option value="2">★★</option>
+                    <option value="1">★</option>
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label>Yorum</label>
+                <textarea asp-for="Yorum"
+                          class="form-control"
+                          rows="4"></textarea>
+            </div>
+
+            <button class="btn btn-success">Güncelle</button>
+            <a href="/UrunDetay/Index/@Model.UrunId"
+               class="btn btn-secondary ms-2">
+                İptal
+            </a>
+        </form>
+
+    </div>
+</div>

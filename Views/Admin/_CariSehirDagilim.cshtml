@@ -1,0 +1,18 @@
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5>Cari Dağılımı (Şehirlere Göre)</h5>
+
+        @foreach (var item in ViewBag.CariSehirDagilim)
+        {
+            <div class="mb-2">
+                <small>@item.Sehir</small>
+                <div class="progress">
+                    <div class="progress-bar bg-primary"
+                         style="width:@item.Oran%">
+                        @item.Sayi
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

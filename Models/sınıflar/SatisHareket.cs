@@ -16,6 +16,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
+        public bool Durum { get; set; }
 
 
         //İlişkiler
@@ -30,7 +31,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public virtual Cariler Cariler { get; set; }
 
 
-        public int PersonelId { get; set; }
+        public int? PersonelId { get; set; }
         [ForeignKey("PersonelId")]
         public virtual Personel Personel { get; set; }
     }

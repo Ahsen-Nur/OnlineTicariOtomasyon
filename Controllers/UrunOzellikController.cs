@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class UrunOzellikController : Controller
+    public class UrunOzellikController : BaseAdminController
     {
         private readonly Context _context;
 

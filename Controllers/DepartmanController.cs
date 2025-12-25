@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class DepartmanController : Controller
+    public class DepartmanController : BaseAdminController
     {
         private readonly Context _context;
         public DepartmanController(Context context) => _context = context;
@@ -17,6 +17,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
                                .Where(d => d.Durum == true)
                                .OrderBy(d => d.DepartmanId)
                                .ToList();
+
+       
+                   
             return View(list);
         }
 

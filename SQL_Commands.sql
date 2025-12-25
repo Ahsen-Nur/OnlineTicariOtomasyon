@@ -72,6 +72,18 @@ SELECT * FROM KategoriOzellikler;
 
 SELECT * FROM UrunOzellikler;
 
+SELECT * FROM Carilers;
+
+DELETE FROM Carilers
+WHERE CariMail = 'aysekaya@hotmail.com'
+
+DELETE FROM SatisHarekets
+WHERE CariId NOT IN (SELECT CariId FROM Carilers)
+
+DELETE FROM UrunYorumlar
+WHERE CariId NOT IN (SELECT CariId FROM Carilers)
+
+
 --------------------------------------------------------------
 
 --Ürün Özellikleri Ekleme
@@ -128,3 +140,13 @@ JOIN UrunOzellikler o ON ko.OzellikId = o.OzellikId
 ORDER BY k.KategoriAd;
 
 ----------------------------------------------------------------
+
+SELECT * FROM Admins;
+
+INSERT INTO Admins (KullaniciAd, Sifre, Yetki)
+VALUES ('admin', '1234', 'A');
+
+
+SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Carilers';

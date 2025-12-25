@@ -1,0 +1,184 @@
+@model MVCTicariOtomasyonWeb.Models.ViewModels.CariHesabimViewModel
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- KULLANICI BİLGİSİ -->
+<div class="mb-4">
+    <h3 class="mb-0">@Model.Cari.CariAd @Model.Cari.CariSoyad</h3>
+    <small class="text-muted">@Model.Cari.CariMail</small>
+</div>
+
+<hr />
+
+<!-- ŞİFRE DEĞİŞTİR -->
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <h5 class="mb-3">Şifre Değiştir</h5>
+
+        <form method="post" action="/Hesabim/SifreDegistir" class="row g-2">
+            <div class="col-md-4">
+                <input type="password"
+                       name="EskiSifre"
+                       class="form-control"
+                       placeholder="Eski Şifre"
+                       required />
+            </div>
+
+            <div class="col-md-4">
+                <input type="password"
+                       name="YeniSifre"
+                       class="form-control"
+                       placeholder="Yeni Şifre"
+                       required />
+            </div>
+
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success w-100">
+                    Güncelle
+                </button>
+            </div>
+        </form>
+
+        @if (TempData["Hata"] != null)
+        {
+            <div class="alert alert-danger mt-3">
+                @TempData["Hata"]
+            </div>
+        }
+
+        @if (TempData["Basarili"] != null)
+        {
+            <div class="alert alert-success mt-3">
+                @TempData["Basarili"]
+            </div>
+        }
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+            <div class="card-body">
+                <h6>Toplam Sipariş</h6>
+                <h4>@Model.ToplamSiparis</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+            <div class="card-body">
+                <h6>Toplam Harcama</h6>
+                <h4>@Model.ToplamHarcama ₺</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+            <div class="card-body">
+                <h6>Yorum Sayısı</h6>
+                <h4>@Model.Yorumlar.Count</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+            <div class="card-body">
+                <h6>Son Alış</h6>
+                <h4>
+                    @(Model.SonAlisTarihi != null
+                        ? Model.SonAlisTarihi.Value.ToShortDateString()
+                        : "-")
+                </h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr />
+
+<!-- SATIN ALIMLAR -->
+<h5>Satın Aldıklarım</h5>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Ürün</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.SatinAlimlar)
+        {
+            <tr>
+                <td>@s.Urun.UrunAd</td>
+                <td>@s.Adet</td>
+                <td>@s.ToplamTutar ₺</td>
+                <td>@s.Tarih.ToShortDateString()</td>
+                <td>
+                    @if (s.Durum)
+                    {
+                        <a href="/SatisHareket/IptalEt/@s.SatisId"
+                           class="btn btn-sm btn-danger"
+                           onclick="return confirm('Bu satın alımı iptal etmek istiyor musunuz?')">
+                            İptal Et
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">İptal</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<!-- YORUMLAR -->
+<h5>Yorumlarım</h5>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Ürün</th>
+            <th>Puan</th>
+            <th>Yorum</th>
+            <th>Tarih</th>
+            <th>İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var y in Model.Yorumlar)
+        {
+            <tr>
+                <td>@y.Urun.UrunAd</td>
+                <td>@y.Puan</td>
+                <td>@y.Yorum</td>
+                <td>@y.Tarih.ToShortDateString()</td>
+                <td>
+                    <a href="/UrunYorum/Duzenle/@y.YorumId"
+                       class="btn btn-sm btn-warning">
+                        Düzenle
+                    </a>
+
+                    <a href="/UrunYorum/Sil/@y.YorumId"
+                       class="btn btn-sm btn-danger"
+                       onclick="return confirm('Silmek istiyor musunuz?')">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

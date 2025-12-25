@@ -3,7 +3,7 @@ using MVCTicariOtomasyonWeb.Models.sınıflar;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class IstatistikController : Controller
+    public class IstatistikController : BaseAdminController
     {
         private readonly Context _context;
 

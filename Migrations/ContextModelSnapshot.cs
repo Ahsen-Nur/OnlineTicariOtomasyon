@@ -81,6 +81,11 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.Property<bool>("Durum")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Sifre")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.HasKey("CariId");
 
                     b.ToTable("Carilers");
@@ -304,10 +309,13 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.Property<int>("CariId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Durum")
+                        .HasColumnType("bit");
+
                     b.Property<decimal>("Fiyat")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("PersonelId")
+                    b.Property<int?>("PersonelId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Tarih")
@@ -451,9 +459,15 @@ namespace MVCTicariOtomasyonWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("YorumId"));
 
+                    b.Property<int>("CariId")
+                        .HasColumnType("int");
+
                     b.Property<string>("KullaniciAd")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Puan")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Tarih")
                         .HasColumnType("datetime2");
@@ -466,6 +480,8 @@ namespace MVCTicariOtomasyonWeb.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("YorumId");
+
+                    b.HasIndex("CariId");
 
                     b.HasIndex("UrunId");
 
@@ -523,9 +539,7 @@ namespace MVCTicariOtomasyonWeb.Migrations
 
                     b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Personel", "Personel")
                         .WithMany("SatisHarekets")
-                        .HasForeignKey("PersonelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PersonelId");
 
                     b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Urun", "Urun")
                         .WithMany("SatisHarekets")
@@ -583,11 +597,19 @@ namespace MVCTicariOtomasyonWeb.Migrations
 
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.UrunYorum", b =>
                 {
+                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Cariler", "Cariler")
+                        .WithMany()
+                        .HasForeignKey("CariId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Urun", "Urun")
                         .WithMany()
                         .HasForeignKey("UrunId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Cariler");
 
                     b.Navigation("Urun");
                 });

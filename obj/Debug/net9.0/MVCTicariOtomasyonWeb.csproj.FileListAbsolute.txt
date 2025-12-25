@@ -249,3 +249,4 @@
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/MVCTicariOtomasyonWeb.pdb
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/MVCTicariOtomasyonWeb.genruntimeconfig.cache
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/ref/MVCTicariOtomasyonWeb.dll
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/MVCTicariOtomasyonWeb.sourcelink.json

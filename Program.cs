@@ -6,11 +6,22 @@ var builder = WebApplication.CreateBuilder(args);
 // MVC
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+
 // DbContext → appsettings.json / ConnectionStrings:DefaultConnection
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
+
+
 
 // Pipeline
 if (!app.Environment.IsDevelopment())
@@ -28,8 +39,9 @@ app.UseHttpsRedirection();
 
 // Statik dosyalar (wwwroot)
 app.UseStaticFiles();
-
 app.UseRouting();
+
+app.UseSession();
 app.UseAuthorization();
 
 // Default route → Kategori/Index

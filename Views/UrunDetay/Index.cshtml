@@ -1,6 +1,9 @@
 @model MVCTicariOtomasyonWeb.Models.ViewModels.UrunDetayViewModel
 @{
     Layout = "~/Views/Shared/AdminLayout.cshtml";
+
+    int? aktifCariId = Context.Session.GetInt32("CariId");
+    string rol = Context.Session.GetString("Rol");
 }
 
 <div class="card shadow-sm">
@@ -14,10 +17,32 @@
                      class="img-fluid rounded mb-3"
                      style="max-height:260px; object-fit:contain;" />
 
-                <a href="/Satis/Yeni/@Model.Urun.UrunId"
-                   class="btn btn-primary btn-block">
-                    <i class="fas fa-cart-plus"></i> Satış Listesine Ekle
-                </a>
+                @if (aktifCariId != null)
+                {
+                    <form method="post" action="/CariSatis/SatinAl" class="d-flex mt-2">
+                        <input type="hidden" name="UrunId" value="@Model.Urun.UrunId" />
+
+                        <div class="input-group mb-2">
+                            <input type="number"
+                                   name="Adet"
+                                   value="1"
+                                   min="1"
+                                   max="@Model.Urun.Stok"
+                                   class="form-control" />
+                                   
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-cart-plus"></i> Satın Al
+                            </button>
+                        </div>
+                    </form>
+                }
+                else
+                {
+                    <a href="/Login/GirisYap"
+                       class="btn btn-outline-primary btn-block">
+                        Satın almak için giriş yap
+                    </a>
+                }
             </div>
 
             <!-- SAĞ: BİLGİLER -->
@@ -28,6 +53,21 @@
 
                 <div class="h4 text-success mt-2">
                     @Model.Urun.SatisFiyat.ToString("N2") ₺
+                </div>
+
+                <div class="mt-1">
+                    @if (Model.Urun.Stok == 0)
+                    {
+                        <span class="badge badge-danger">Stokta Yok</span>
+                    }
+                    else if (Model.Urun.Stok <= 5)
+                    {
+                        <span class="badge badge-warning">Kritik Stok (@Model.Urun.Stok)</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-success">Stokta Var (@Model.Urun.Stok)</span>
+                    }
                 </div>
 
                 <hr />
@@ -43,8 +83,7 @@
 
                 @if (Model.Ozellikler.Any())
                 {
-                    var grupluOzellikler =
-                        Model.Ozellikler.GroupBy(x => x.Ozellik.OzellikAd);
+                    var grupluOzellikler = Model.Ozellikler.GroupBy(x => x.Ozellik.OzellikAd);
 
                     foreach (var grup in grupluOzellikler)
                     {
@@ -55,14 +94,7 @@
                                 @foreach (var item in grup)
                                 {
                                     <span class="badge badge-light border px-2 py-1 mr-1 text-dark">
-
                                         @item.Deger
-                                        <a href="/UrunOzellik/Sil/@item.Id"
-                                           class="text-danger ml-1"
-                                           title="Sil"
-                                           onclick="return confirm('Bu değeri silmek istiyor musunuz?')">
-                                            <i class="fas fa-times"></i>
-                                        </a>
                                     </span>
                                 }
                             </div>
@@ -87,25 +119,85 @@
                     <p class="text-muted">Açıklama girilmemiş.</p>
                 }
 
-                <a href="/UrunAciklama/Ekle/@Model.Urun.UrunId"
-                   class="btn btn-sm btn-outline-info mb-3">
-                    Açıklama Düzenle
-                </a>
-
                 <hr />
 
                 <!-- YORUMLAR -->
                 <h5>Yorumlar</h5>
+
+                <!-- YORUM YAPMA -->
+                @if (ViewBag.YorumYetkisi == true)
+                {
+                    <div class="mb-4 p-3 border rounded bg-light">
+                        <h6 class="mb-2">Yorum Yap</h6>
+
+                        <form method="post" action="/UrunYorum/Ekle">
+                            <input type="hidden" name="UrunId" value="@Model.Urun.UrunId" />
+
+                            <div class="mb-2">
+                                <label>Puan</label>
+                                <select name="Puan" class="form-control form-control-sm" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="5">★★★★★</option>
+                                    <option value="4">★★★★</option>
+                                    <option value="3">★★★</option>
+                                    <option value="2">★★</option>
+                                    <option value="1">★</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-2">
+                                <label>Yorum</label>
+                                <textarea name="Yorum"
+                                          class="form-control form-control-sm"
+                                          rows="3"
+                                          required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-sm">
+                                Yorumu Gönder
+                            </button>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted mb-3">
+                        Bu ürünü satın alan kullanıcılar yorum yapabilir.
+                    </p>
+                }
+
+                <!-- YORUM LİSTESİ -->
                 @if (Model.Yorumlar.Any())
                 {
-                    @foreach (var y in Model.Yorumlar)
+                    foreach (var y in Model.Yorumlar)
                     {
-                        <div class="mb-3">
+                        <div class="mb-3 p-2 border rounded">
                             <strong>@y.KullaniciAd</strong>
-                            <small class="text-muted">
-                                (@y.Tarih.ToShortDateString())
-                            </small>
-                            <div>@y.Yorum</div>
+
+                            <div>
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="@(i <= y.Puan ? "fas fa-star text-warning" : "far fa-star text-muted")"></i>
+                                }
+                            </div>
+
+                            <small class="text-muted">@y.Tarih.ToShortDateString()</small>
+
+                            <div class="mb-2">@y.Yorum</div>
+
+                            @if (rol == "Admin" || (aktifCariId != null && y.CariId == aktifCariId))
+                            {
+                                <a href="/UrunYorum/Sil/@y.YorumId"
+                                   class="btn btn-sm btn-danger"
+                                   onclick="return confirm('Bu yorumu silmek istiyor musunuz?')">
+                                    Yorumu Sil
+                                </a>
+
+                                <a href="/UrunYorum/Duzenle/@y.YorumId"
+                                   class="btn btn-sm btn-warning ms-1">
+                                    Düzenle
+                                </a>
+                            }
                         </div>
                     }
                 }

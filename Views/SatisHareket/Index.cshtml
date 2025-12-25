@@ -38,21 +38,42 @@
                     {
                         <tr>
                             <td>@s.SatisId</td>
-                            <td>@s.Urun.UrunAd</td>
-                            <td>@s.Cariler.CariAd @s.Cariler.CariSoyad</td>
-                            <td>@s.Personel.PersonelAd @s.Personel.PersonelSoyad</td>
+
+                            <td>
+                                @(s.Urun != null ? s.Urun.UrunAd : "-")
+                            </td>
+
+                            <td>
+                                @(s.Cariler != null 
+                                    ? s.Cariler.CariAd + " " + s.Cariler.CariSoyad 
+                                    : "—")
+                            </td>
+
+                            <td>
+                                @(s.Personel != null 
+                                    ? s.Personel.PersonelAd + " " + s.Personel.PersonelSoyad 
+                                    : "Online Satış")
+                            </td>
+
                             <td>@s.Adet</td>
+
                             <td>@s.Fiyat ₺</td>
+
                             <td>@s.ToplamTutar ₺</td>
+
                             <td>@s.Tarih.ToShortDateString()</td>
 
                             <td>
-                                <a asp-controller="SatisHareket" asp-action="Detay" asp-route-id="@s.SatisId"
+                                <a asp-controller="SatisHareket"
+                                   asp-action="Detay"
+                                   asp-route-id="@s.SatisId"
                                    class="btn btn-info btn-sm text-white me-1">
                                     <i class="bi bi-eye"></i>
                                 </a>
 
-                                <a asp-controller="SatisHareket" asp-action="Guncelle" asp-route-id="@s.SatisId"
+                                <a asp-controller="SatisHareket"
+                                   asp-action="Guncelle"
+                                   asp-route-id="@s.SatisId"
                                    class="btn btn-warning btn-sm text-white me-1">
                                     <i class="bi bi-pencil"></i>
                                 </a>

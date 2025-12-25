@@ -1,0 +1,13 @@
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5>Personel Dağılımı</h5>
+
+        @foreach (var item in ViewBag.DepartmanDagilim)
+        {
+            <div class="d-flex justify-content-between border-bottom py-1">
+                <span>@item.Departman</span>
+                <strong>@item.Sayi</strong>
+            </div>
+        }
+    </div>
+</div>

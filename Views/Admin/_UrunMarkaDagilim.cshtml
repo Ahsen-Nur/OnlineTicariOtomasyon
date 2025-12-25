@@ -1,0 +1,18 @@
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h5>Ürün Dağılımı (Marka)</h5>
+
+        @foreach (var item in ViewBag.MarkaDagilim)
+        {
+            <div class="mb-2">
+                <small>@item.Marka</small>
+                <div class="progress">
+                    <div class="progress-bar bg-success"
+                         style="width:@item.Oran%">
+                        @item.Sayi
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

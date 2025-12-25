@@ -4,7 +4,7 @@ using MVCTicariOtomasyonWeb.Models.sınıflar;
 
 namespace MVCTicariOtomasyonWeb.Controllers
 {
-    public class FaturaKalemController : Controller
+    public class FaturaKalemController : BaseAdminController
     {
         private readonly Context _context;
 

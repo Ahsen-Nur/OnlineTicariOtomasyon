@@ -28,6 +28,26 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Admin/_AdminGenelDurum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX0FkbWluR2VuZWxEdXJ1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Admin/_CariSehirDagilim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX0NhcmlTZWhpckRhZ2lsaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Admin/_PersonelDepartmanDagilim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX1BlcnNvbmVsRGVwYXJ0bWFuRGFnaWxpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Admin/_UrunMarkaDagilim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vX1VydW5NYXJrYURhZ2lsaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Cariler/CariSatis.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyaWxlci9DYXJpU2F0aXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,6 +112,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRmF0dXJhS2FsZW0vWWVuaUthbGVtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Hesabim/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGVzYWJpbS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -114,6 +138,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Kategori/YeniKategori.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2F0ZWdvcmkvWWVuaUthdGVnb3JpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Login/AdminGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vQWRtaW5HaXJpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Login/GirisYap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vR2lyaXNZYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Login/KayitOl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vS2F5aXRPbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Personel/Guncelle.cshtml]
@@ -186,6 +222,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/UrunOzellik/Ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXJ1bk96ZWxsaWsvRWtsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/UrunYorum/Duzenle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXJ1bllvcnVtL0R1emVubGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/_ViewImports.cshtml]

@@ -1,0 +1,150 @@
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3 class="mb-4">Admin Paneli</h3>
+
+<!-- ===================== -->
+<!-- ÜST İSTATİSTİK KARTLARI -->
+<!-- ===================== -->
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 text-center" style="background:#EAF2FF;">
+            <div class="card-body">
+                <h6 class="text-muted">Toplam Cari</h6>
+                <h3 class="fw-bold text-primary">@ViewBag.ToplamCari</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 text-center" style="background:#EAF9F1;">
+            <div class="card-body">
+                <h6 class="text-muted">Ürün Sayısı</h6>
+                <h3 class="fw-bold text-success">@ViewBag.ToplamUrun</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 text-center" style="background:#FFF4E5;">
+            <div class="card-body">
+                <h6 class="text-muted">Toplam Satış</h6>
+                <h3 class="fw-bold text-warning">@ViewBag.ToplamSatis</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 text-center" style="background:#F3EEFF;">
+            <div class="card-body">
+                <h6 class="text-muted">Personel Sayısı</h6>
+                <h3 class="fw-bold text-info">@ViewBag.PersonelSayisi</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- ORTA ALAN -->
+<!-- ===================== -->
+<div class="row">
+
+    <!-- SOL KOLON -->
+    <div class="col-md-6">
+
+        <!-- CARİ DAĞILIMI -->
+        <div class="card shadow-sm border-0 mb-1" style="background:#F7F9FC;">
+            <div class="card-body">
+                <h6 class="fw-semibold mb-3 text-primary">
+                    Cari Dağılımı (Şehirlere Göre)
+                </h6>
+
+                @foreach (var c in ViewBag.CariSehirDagilim)
+                {
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small class="fw-semibold">@c.Sehir</small>
+                            <small class="text-muted">@c.Sayi kişi</small>
+                        </div>
+
+                        <div class="progress" style="height:10px;">
+                            <div class="progress-bar bg-primary"
+                                 style="width:@c.Oran%">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- PERSONEL DAĞILIMI (ARTIK DOĞRU YERDE) -->
+        <div class="card shadow-sm border-0" style="background:#F7F9FC;">
+            <div class="card-body">
+                <h6 class="fw-semibold mb-3 text-info">
+                    Personel Dağılımı (Departman)
+                </h6>
+
+                @{
+                    int toplamPersonel = ViewBag.PersonelSayisi;
+                    string[] renkler = { "bg-info", "bg-warning", "bg-danger", "bg-secondary" };
+                    int i = 0;
+                }
+
+                @foreach (var p in ViewBag.DepartmanDagilim)
+                {
+                    var oran = toplamPersonel == 0 ? 0 : (p.Sayi * 100) / toplamPersonel;
+                    var renk = renkler[i % renkler.Length];
+                    i++;
+
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small class="fw-semibold">@p.Departman</small>
+                            <small class="text-muted">@p.Sayi kişi</small>
+                        </div>
+
+                        <div class="progress" style="height:10px;">
+                            <div class="progress-bar @renk"
+                                 style="width:@oran%">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SAĞ KOLON -->
+    <div class="col-md-6">
+
+        <!-- ÜRÜN / MARKA DAĞILIMI -->
+        <div class="card shadow-sm border-0" style="background:#F7F9FC;">
+            <div class="card-body">
+                <h6 class="fw-semibold mb-3 text-success">
+                    Ürün Dağılımı (Marka)
+                </h6>
+
+                @foreach (var m in ViewBag.MarkaDagilim)
+                {
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <small class="fw-semibold">@m.Marka</small>
+                            <small class="text-muted">@m.Sayi ürün</small>
+                        </div>
+
+                        <div class="progress" style="height:10px;">
+                            <div class="progress-bar bg-success"
+                                 style="width:@m.Oran%">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+</div>

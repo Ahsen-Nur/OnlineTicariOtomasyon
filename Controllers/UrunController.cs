@@ -20,6 +20,13 @@ namespace MVCTicariOtomasyonWeb.Controllers
             _env = env;
         }
 
+        private IActionResult AdminKontrol()
+        {
+            if (HttpContext.Session.GetString("Rol") != "Admin")
+                return RedirectToAction("GirisYap", "Login");
+            return null;
+        }
+
         public IActionResult Index()
         {
             var urunler = _context.Uruns
@@ -27,6 +34,8 @@ namespace MVCTicariOtomasyonWeb.Controllers
                 .Where(u => u.Durum == true)
                 .OrderBy(u => u.UrunId)
                 .ToList();
+            
+
 
             return View(urunler);
         }
@@ -34,6 +43,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [HttpGet]
         public IActionResult YeniUrun()
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             ViewBag.Kategoriler = _context.Kategoris
                 .Where(k => k.Durum == true)
                 .Select(k => new SelectListItem
@@ -49,6 +61,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult YeniUrun(Urun p, IFormFile UrunGorsel)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             ModelState.Remove(nameof(Urun.Kategori));
             ModelState.Remove(nameof(Urun.SatisHarekets));
             ModelState.Remove(nameof(Urun.UrunGorsel));
@@ -92,6 +107,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [HttpGet]
         public IActionResult Guncelle(int id)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             var urun = _context.Uruns.Find(id);
             if (urun == null) return NotFound();
 
@@ -111,6 +129,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Guncelle(Urun p, IFormFile YeniGorsel)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             ModelState.Remove(nameof(Urun.Kategori));
             ModelState.Remove(nameof(Urun.SatisHarekets));
             ModelState.Remove(nameof(Urun.UrunGorsel));
@@ -166,6 +187,9 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
         public IActionResult Sil(int id)
         {
+            var kontrol = AdminKontrol();
+            if (kontrol != null) return kontrol;
+
             var urun = _context.Uruns.Find(id);
             if (urun == null)
                 return NotFound();
@@ -179,6 +203,8 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
         public IActionResult UrunListesi()
         {
+
+
             var list = _context.Uruns
                 .Include(x => x.Kategori)
                 .Where(x => x.Durum == true)
