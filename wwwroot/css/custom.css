@@ -1,3 +1,7 @@
+/* =========================
+   GENEL STİLLER
+   ========================= */
+
 .card-header {
     background: linear-gradient(90deg, #4e73df 0%, #224abe 100%);
     font-weight: 500;
@@ -13,8 +17,9 @@
     transform: scale(1.05);
     transition: 0.2s;
 }
+
 .tooltip-inner {
-    background-color: #224abe; /* Mavi ton */
+    background-color: #224abe;
     font-weight: 500;
     padding: 6px 10px;
     font-size: 0.85rem;
@@ -25,7 +30,10 @@
     transition: opacity 0.2s ease-in-out;
 }
 
-/* Flaticon ikonlarının görünmesini zorunlu hale getirir */
+/* =========================
+   FLATICON / UICONS
+   ========================= */
+
 i.fi, i[class*="fi-"] {
     font-family: 'uicons-regular-rounded' !important;
     font-style: normal !important;
@@ -37,13 +45,65 @@ i.fi, i[class*="fi-"] {
     line-height: 1;
 }
 
-/* Bold Rounded (fi-br) seti için özel font-family */
 i.fi-br {
     font-family: 'uicons-bold-rounded' !important;
 }
 
-/* Solid Rounded (fi-sr) seti için özel font-family */
 i.fi-sr {
     font-family: 'uicons-solid-rounded' !important;
 }
 
+/* ==================================================
+   DARK MODE – FORM FLOATING (ASIL KRİTİK KISIM)
+   ================================================== */
+
+/* Bootstrap secondary color override (ÇOK ÖNEMLİ) */
+body.dark {
+    --bs-secondary-color: #b5b9c9;
+    background-color: #1c1f2b;
+    color: #e4e6eb;
+}
+
+/* Form-floating label */
+body.dark .form-floating > label {
+    color: #d1d3dc !important;
+}
+
+/* Placeholder (mail / şifre yazıları) */
+body.dark .form-floating > .form-control::placeholder {
+    color: #b5b9c9 !important;
+    opacity: 1 !important;
+}
+
+/* Input alanı */
+body.dark .form-floating > .form-control {
+    background-color: #1f2233 !important;
+    color: #ffffff !important;
+    border: 1px solid #3a3f55;
+}
+
+/* Card (login kutusu dahil) */
+body.dark .card {
+    background-color: #2a2d3e !important;
+    color: #e4e6eb !important;
+    border: none;
+}
+
+/* Card başlıkları (Giriş Yap vs.) */
+body.dark .card h1,
+body.dark .card h2,
+body.dark .card h3,
+body.dark .card h4,
+body.dark .card h5,
+body.dark .card-title {
+    color: #ffffff !important;
+}
+
+/* text-muted (küçük açıklamalar) */
+body.dark .text-muted {
+    color: #b5b9c9 !important;
+}
+
+body.dark {
+    outline: 10px solid red !important;
+}

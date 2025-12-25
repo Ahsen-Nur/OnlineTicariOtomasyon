@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets/images/urunler/image_4xtl.webp"
     },
     {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/darkmode.js",
+      "PackagePath": "staticwebassets/js/darkmode.js"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/grafikler.js",
+      "PackagePath": "staticwebassets/js/grafikler.js"
+    },
+    {
       "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

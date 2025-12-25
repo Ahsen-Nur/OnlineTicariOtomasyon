@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVCTicariOtomasyonWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09865d6c1cd29ae385e2cbfb798a6b044f97195f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0200d8db7eb4391cf7ca887da516b7b0ea327627")]
 [assembly: System.Reflection.AssemblyProductAttribute("MVCTicariOtomasyonWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVCTicariOtomasyonWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

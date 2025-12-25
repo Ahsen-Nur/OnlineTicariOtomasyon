@@ -150,8 +150,6 @@
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/scopedcss/bundle/MVCTicariOtomasyonWeb.styles.css
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/scopedcss/projectbundle/MVCTicariOtomasyonWeb.bundle.scp.css
-/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/6lrpj62c0i-gzgaiw6sps.gz
-/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/so3p0txnfc-b9sayid5wm.gz
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/u3en7ovzn3-61n19gt1b8.gz
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/aritjobtk8-xtxxf3hu2r.gz
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/c11v09s0nq-bqjiyaj88i.gz
@@ -250,3 +248,7 @@
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/MVCTicariOtomasyonWeb.genruntimeconfig.cache
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/ref/MVCTicariOtomasyonWeb.dll
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/MVCTicariOtomasyonWeb.sourcelink.json
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/so3p0txnfc-z683rxsr0p.gz
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/mheo17evtx-qqs9gfbkg5.gz
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/1jpydd4b0w-mxoi9lxfmc.gz
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/6lrpj62c0i-e5prbl7ws2.gz

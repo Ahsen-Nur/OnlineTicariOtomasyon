@@ -1,0 +1,66 @@
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3 class="mb-4">Grafikler</h3>
+
+<div class="row">
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h5>Cari – Şehir Dağılımı</h5>
+                <canvas id="cariSehirChart" height="220"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h5>Ürün – Marka Dağılımı</h5>
+                <canvas id="urunMarkaChart" height="220"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h5>Günlük Satış Grafiği</h5>
+                <canvas id="gunlukSatisChart" height="120"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h5>En Çok Satan Ürünler</h5>
+                <canvas id="enCokSatanChart" height="220"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h5>Cari Bazlı Harcama</h5>
+                <canvas id="cariHarcamaChart" height="220"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/js/grafikler.js"></script>
+
