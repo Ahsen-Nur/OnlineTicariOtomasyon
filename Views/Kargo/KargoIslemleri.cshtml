@@ -1,0 +1,106 @@
+@model List<MVCTicariOtomasyonWeb.Models.sınıflar.Kargo>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Kargo İşlemleri";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-primary text-white d-flex align-items-center">
+            <i class="bi bi-truck fs-5 me-2"></i>
+            <h5 class="mb-0">Kargo İşlemleri</h5>
+        </div>
+
+        <div class="card-body">
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center">
+                    Henüz kargo kaydı bulunmamaktadır.
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover align-middle text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Takip Kodu</th>
+                            <th>Cari</th>
+                            <th>Durum</th>
+                            <th>İşlem</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var k in Model)
+                        {
+                            // 🔹 Aynı kargoda birden fazla satış olabilir,
+                            // biz ilk satıştan cari bilgisini alıyoruz
+                            var satis = k.KargoDetaylar
+                                .Select(d => d.SatisHareket)
+                                .FirstOrDefault();
+
+                            <tr>
+                                <td class="fw-semibold">@k.TakipKodu</td>
+
+                                <td>
+                                    @(satis?.Cariler != null
+                                        ? satis.Cariler.CariAd + " " + satis.Cariler.CariSoyad
+                                        : "—")
+                                </td>
+
+                                <td>
+                                    @if (k.Durum == "Kargoda")
+                                    {
+                                        <span class="badge bg-primary">
+                                            <i class="bi bi-box-seam"></i> Kargoda
+                                        </span>
+                                    }
+                                    else if (k.Durum == "Teslim Edildi")
+                                    {
+                                        <span class="badge bg-success">
+                                            <i class="bi bi-check-circle"></i> Teslim Edildi
+                                        </span>
+                                    }
+                                    else if (k.Durum == "İade Beklemede")
+                                    {
+                                        <span class="badge bg-warning text-dark">
+                                            <i class="bi bi-arrow-repeat"></i> İade Beklemede
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">@k.Durum</span>
+                                    }
+                                </td>
+
+                                <td>
+                                    @if (k.Durum == "Kargoda")
+                                    {
+                                        <a asp-action="TeslimEt"
+                                           asp-route-id="@k.KargoId"
+                                           class="btn btn-sm btn-success">
+                                            <i class="bi bi-check-circle"></i> Teslim Et
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">—</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
+        </div>
+    </div>
+
+    <div class="text-center mt-3 text-muted small">
+        © Ticari Otomasyon 2025
+    </div>
+</div>

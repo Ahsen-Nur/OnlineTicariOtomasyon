@@ -117,6 +117,7 @@
         </tr>
     </thead>
     <tbody>
+        
         @foreach (var s in Model.SatinAlimlar)
         {
             <tr>
@@ -125,21 +126,40 @@
                 <td>@s.ToplamTutar ₺</td>
                 <td>@s.Tarih.ToShortDateString()</td>
                 <td>
-                    @if (s.Durum)
+                    @* 1️⃣ Teslim edildiyse → İADE *@
+                    @if (s.SiparisDurum == "Teslim Edildi")
                     {
-                        <a href="/SatisHareket/IptalEt/@s.SatisId"
-                           class="btn btn-sm btn-danger"
-                           onclick="return confirm('Bu satın alımı iptal etmek istiyor musunuz?')">
+                        <a asp-controller="IadeTalep"
+                            asp-action="TalepEt"
+                            asp-route-satisId="@s.SatisId"
+                            class="btn btn-sm btn-warning"
+                            onclick="return confirm('Bu ürünü iade etmek istiyor musunuz?')">
+                            İade Et
+                        </a>
+                    }
+
+                    @* 2️⃣ Henüz hazırlanıyorsa → İPTAL *@
+                    else if (s.SiparisDurum == "Hazırlanıyor")
+                    {
+                        <a asp-controller="SatisHareket"
+                            asp-action="IptalEt"
+                            asp-route-id="@s.SatisId"
+                            class="btn btn-sm btn-danger"
+                            onclick="return confirm('Bu satın alımı iptal etmek istiyor musunuz?')">
                             İptal Et
                         </a>
                     }
+
+                    @* 3️⃣ Diğer tüm durumlar *@
                     else
                     {
-                        <span class="badge bg-secondary">İptal</span>
+                        <span class="badge bg-secondary">@s.SiparisDurum</span>
                     }
                 </td>
             </tr>
         }
+
+
     </tbody>
 </table>
 

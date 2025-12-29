@@ -128,8 +128,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Iade/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSWFkZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Istatistik/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXN0YXRpc3Rpay9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Kargo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FyZ28vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Kargo/KargoIslemleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FyZ28vS2FyZ29Jc2xlbWxlcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Kargo/Yeni.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FyZ28vWWVuaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/KargoTakip/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS2FyZ29UYWtpcC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Kategori/Guncelle.cshtml]

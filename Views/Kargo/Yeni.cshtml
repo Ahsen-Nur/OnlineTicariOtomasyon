@@ -1,0 +1,49 @@
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Kargoya Ver";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark">
+            <h5>Kargo Oluştur</h5>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Yeni" method="post">
+
+                <input type="hidden" name="satisId" value="@ViewBag.SatisId" />
+
+                <div class="mb-3">
+                    <label class="form-label">Kargo Firması</label>
+                    <select name="kargoFirmasi" class="form-select" required>
+                        <option value="">Seçiniz</option>
+                        <option>Yurtiçi Kargo</option>
+                        <option>MNG Kargo</option>
+                        <option>Aras Kargo</option>
+                        <option>PTT Kargo</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Takip Kodu</label>
+                    <input type="text"
+                           class="form-control"
+                           value="@ViewBag.TakipKodu"
+                           disabled />
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    Kargoya Ver
+                </button>
+
+                <a asp-controller="Kargo"
+                   asp-action="Index"
+                   class="btn btn-secondary ms-2">
+                   İptal
+                </a>
+
+            </form>
+        </div>
+    </div>
+</div>

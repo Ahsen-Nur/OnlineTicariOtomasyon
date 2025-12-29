@@ -21,7 +21,7 @@
 
         <div class="card-body">
 
-            @if (!Model.Any())
+            @if (Model == null || !Model.Any())
             {
                 <div class="alert alert-info text-center">
                     Bu cariye ait satış bulunmuyor.
@@ -47,8 +47,15 @@
                         {
                             <tr class="text-center">
                                 <td>@s.SatisId</td>
-                                <td>@s.Urun.UrunAd</td>
-                                <td>@s.Personel.PersonelAd @s.Personel.PersonelSoyad</td>
+
+                                <td>
+                                    @(s.Urun != null ? s.Urun.UrunAd : "-")
+                                </td>
+                                <td>
+                                    @(s.Personel != null
+                                        ? s.Personel.PersonelAd + " " + s.Personel.PersonelSoyad
+                                        : "Online Satış")
+                                </td>
                                 <td>@s.Adet</td>
                                 <td>@s.Fiyat</td>
                                 <td>@s.ToplamTutar</td>
@@ -56,6 +63,7 @@
                             </tr>
                         }
                     </tbody>
+                    
                 </table>
             }
         </div>

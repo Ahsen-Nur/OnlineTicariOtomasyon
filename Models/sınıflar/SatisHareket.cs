@@ -19,6 +19,12 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public bool Durum { get; set; }
 
 
+
+        public string SiparisDurum { get; set; } = "Hazırlanıyor";
+        public DateTime? KargoyaVerilmeTarihi { get; set; }
+        
+        
+
         //İlişkiler
         
         public int UrunId { get; set; }
@@ -26,7 +32,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public virtual Urun Urun { get; set; }
 
         
-        public int CariId { get; set; }
+        public int? CariId { get; set; }
         [ForeignKey("CariId")]
         public virtual Cariler Cariler { get; set; }
 
@@ -34,5 +40,6 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public int? PersonelId { get; set; }
         [ForeignKey("PersonelId")]
         public virtual Personel Personel { get; set; }
+        
     }
 }

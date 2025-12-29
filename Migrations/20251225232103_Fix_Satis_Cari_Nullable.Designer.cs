@@ -4,6 +4,7 @@ using MVCTicariOtomasyonWeb.Models.sınıflar;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCTicariOtomasyonWeb.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251225232103_Fix_Satis_Cari_Nullable")]
+    partial class Fix_Satis_Cari_Nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,35 +216,6 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.ToTable("Giders");
                 });
 
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Iade", b =>
-                {
-                    b.Property<int>("IadeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IadeId"));
-
-                    b.Property<string>("Aciklama")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Durum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SatisId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TalepTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("IadeId");
-
-                    b.HasIndex("SatisId");
-
-                    b.ToTable("Iades");
-                });
-
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", b =>
                 {
                     b.Property<int>("KargoId")
@@ -261,39 +235,19 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.Property<DateTime>("OlusturmaTarihi")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("SatisId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TakipKodu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("TeslimTarihi")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("KargoId");
 
+                    b.HasIndex("SatisId")
+                        .IsUnique();
+
                     b.ToTable("Kargos");
-                });
-
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.KargoDetay", b =>
-                {
-                    b.Property<int>("KargoDetayId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KargoDetayId"));
-
-                    b.Property<int>("KargoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SatisId")
-                        .HasColumnType("int");
-
-                    b.HasKey("KargoDetayId");
-
-                    b.HasIndex("KargoId");
-
-                    b.HasIndex("SatisId");
-
-                    b.ToTable("KargoDetays");
                 });
 
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kategori", b =>
@@ -589,34 +543,15 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.Navigation("Faturalar");
                 });
 
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Iade", b =>
+            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", b =>
                 {
-                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket", "SatisHareket")
-                        .WithMany()
-                        .HasForeignKey("SatisId")
+                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket", "Satis")
+                        .WithOne()
+                        .HasForeignKey("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", "SatisId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("SatisHareket");
-                });
-
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.KargoDetay", b =>
-                {
-                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", "Kargo")
-                        .WithMany("KargoDetaylar")
-                        .HasForeignKey("KargoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket", "SatisHareket")
-                        .WithMany()
-                        .HasForeignKey("SatisId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Kargo");
-
-                    b.Navigation("SatisHareket");
+                    b.Navigation("Satis");
                 });
 
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.KategoriOzellik", b =>
@@ -745,11 +680,6 @@ namespace MVCTicariOtomasyonWeb.Migrations
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Faturalar", b =>
                 {
                     b.Navigation("FaturaKalems");
-                });
-
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", b =>
-                {
-                    b.Navigation("KargoDetaylar");
                 });
 
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kategori", b =>

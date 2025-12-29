@@ -29,7 +29,9 @@
                         <th>Fiyat</th>
                         <th>Toplam</th>
                         <th>Tarih</th>
+                        <th>Durum</th>
                         <th>İşlemler</th>
+                        
                     </tr>
                 </thead>
 
@@ -64,6 +66,15 @@
                             <td>@s.Tarih.ToShortDateString()</td>
 
                             <td>
+                                <span class="badge 
+                                    @(s.SiparisDurum == "Hazırlanıyor" ? "bg-warning" :
+                                        s.SiparisDurum == "Kargoda" ? "bg-info" :
+                                        "bg-success")">
+                                    @s.SiparisDurum
+                                </span>
+                            </td>
+
+                            <td>
                                 <a asp-controller="SatisHareket"
                                    asp-action="Detay"
                                    asp-route-id="@s.SatisId"
@@ -78,6 +89,17 @@
                                     <i class="bi bi-pencil"></i>
                                 </a>
 
+                                @if (s.SiparisDurum == "Hazırlanıyor")
+                                {
+                                    <a asp-controller="Kargo"
+                                        asp-action="Yeni"
+                                        asp-route-satisId="@s.SatisId"
+                                        class="btn btn-sm btn-warning ms-1">
+                                        Kargoya Ver
+                                    </a>
+                                }
+
+                                
                                 <form asp-controller="SatisHareket" 
                                       asp-action="Sil"
                                       asp-route-id="@s.SatisId" 

@@ -1,0 +1,30 @@
+@using MVCTicariOtomasyonWeb.Models.sınıflar
+@model List<Kargo>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h3>Kargolarım</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Takip Kodu</th>
+            <th>Ürün</th>
+            <th>Durum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var k in Model)
+        {
+            foreach (var kd in k.KargoDetaylar)
+            {
+                <tr>
+                    <td>@k.TakipKodu</td>
+                    <td>@kd.SatisHareket.Urun.UrunAd</td>
+                    <td>@k.Durum</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -76,12 +76,11 @@ namespace MVCTicariOtomasyonWeb.Controllers
         public IActionResult CariSatis(int id)
         {
             var satislar = _context.SatisHarekets
-                .Where(s => s.CariId == id)
                 .Include(s => s.Urun)
                 .Include(s => s.Personel)
+                .Where(s => s.CariId == id)
                 .OrderByDescending(s => s.SatisId)
                 .ToList();
-
             ViewBag.CariAd = _context.Carilers
                 .Where(c => c.CariId == id)
                 .Select(c => c.CariAd + " " + c.CariSoyad)
@@ -89,6 +88,5 @@ namespace MVCTicariOtomasyonWeb.Controllers
 
             return View(satislar);
         }
-
     }
 }

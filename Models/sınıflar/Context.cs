@@ -27,7 +27,10 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public DbSet<UrunAciklama> UrunAciklamalar { get; set; }
         public DbSet<UrunYorum> UrunYorumlar { get; set; }
         public DbSet<KategoriOzellik> KategoriOzellikler { get; set; }
-        
+        public DbSet<Kargo> Kargos { get; set; }
+        public DbSet<KargoDetay> KargoDetays { get; set; }
+        public DbSet<Iade> Iades { get; set; }
+
 
 
 
@@ -57,6 +60,22 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
                 .WithMany(k => k.Uruns)
                 .HasForeignKey(u => u.KategoriId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            
+            modelBuilder.Entity<KargoDetay>()
+                .HasOne(kd => kd.Kargo)
+                .WithMany(k => k.KargoDetaylar)
+                .HasForeignKey(kd => kd.KargoId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<KargoDetay>()
+                .HasOne(kd => kd.SatisHareket)
+                .WithMany()
+                .HasForeignKey(kd => kd.SatisId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            base.OnModelCreating(modelBuilder);
+            
         }
     }
 }

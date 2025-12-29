@@ -33,6 +33,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
                 Adet = adet,
                 Tarih = DateTime.Now,
                 ToplamTutar = adet * urun.SatisFiyat,
+                SiparisDurum = "Hazırlanıyor",
                 Durum = true
             };
 

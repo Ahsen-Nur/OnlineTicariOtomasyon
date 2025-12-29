@@ -4,6 +4,7 @@ using MVCTicariOtomasyonWeb.Models.sınıflar;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCTicariOtomasyonWeb.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20251229130201_newupdates")]
+    partial class newupdates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,35 +216,6 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.ToTable("Giders");
                 });
 
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Iade", b =>
-                {
-                    b.Property<int>("IadeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IadeId"));
-
-                    b.Property<string>("Aciklama")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Durum")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SatisId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("TalepTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("IadeId");
-
-                    b.HasIndex("SatisId");
-
-                    b.ToTable("Iades");
-                });
-
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Kargo", b =>
                 {
                     b.Property<int>("KargoId")
@@ -264,9 +238,6 @@ namespace MVCTicariOtomasyonWeb.Migrations
                     b.Property<string>("TakipKodu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("TeslimTarihi")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("KargoId");
 
@@ -587,17 +558,6 @@ namespace MVCTicariOtomasyonWeb.Migrations
                         .IsRequired();
 
                     b.Navigation("Faturalar");
-                });
-
-            modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.Iade", b =>
-                {
-                    b.HasOne("MVCTicariOtomasyonWeb.Models.sınıflar.SatisHareket", "SatisHareket")
-                        .WithMany()
-                        .HasForeignKey("SatisId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SatisHareket");
                 });
 
             modelBuilder.Entity("MVCTicariOtomasyonWeb.Models.sınıflar.KargoDetay", b =>
