@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/MVCTicariOtomasyonWeb.g4new1715l.bundle.scp.css"
     },
     {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css",
+      "PackagePath": "staticwebassets/css/animated-bg.css"
+    },
+    {
       "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/custom.css",
       "PackagePath": "staticwebassets/css/custom.css"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/images/urunler/image_4xtl.webp",
       "PackagePath": "staticwebassets/images/urunler/image_4xtl.webp"
+    },
+    {
+      "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js",
+      "PackagePath": "staticwebassets/js/animated-bg.js"
     },
     {
       "Id": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/darkmode.js",

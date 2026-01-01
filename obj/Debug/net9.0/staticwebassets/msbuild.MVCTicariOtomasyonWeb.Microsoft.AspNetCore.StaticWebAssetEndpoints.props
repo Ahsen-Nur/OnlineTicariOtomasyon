@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/css/animated-bg.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\animated-bg.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"506"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 Jan 2026 15:57:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/css/animated-bg.ziyuwpv7v0.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\animated-bg.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ziyuwpv7v0"},{"Name":"integrity","Value":"sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="},{"Name":"label","Value":"_content/MVCTicariOtomasyonWeb/css/animated-bg.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"506"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 Jan 2026 15:57:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/css/custom.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\custom.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -95,6 +107,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-alYa6UrE4E5Q1wh5nSPP9VQ51jV5dnCdneD1Zv5HHYw="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"89528"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022alYa6UrE4E5Q1wh5nSPP9VQ51jV5dnCdneD1Zv5HHYw=\u0022"},{"Name":"Last-Modified","Value":"Sun, 14 Dec 2025 19:44:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/js/animated-bg.g3ov8hibl9.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\animated-bg.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g3ov8hibl9"},{"Name":"integrity","Value":"sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="},{"Name":"label","Value":"_content/MVCTicariOtomasyonWeb/js/animated-bg.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"869"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 Jan 2026 16:00:23 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/js/animated-bg.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\animated-bg.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"869"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 Jan 2026 16:00:23 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVCTicariOtomasyonWeb/js/darkmode.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\darkmode.js'))</AssetFile>

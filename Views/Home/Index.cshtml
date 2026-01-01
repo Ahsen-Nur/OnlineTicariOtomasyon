@@ -10,60 +10,112 @@
     <title>Ticari Otomasyon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
     <style>
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1f2933, #111827);
-            color: #fff;
+            background: linear-gradient(180deg, #1e3a8a, #0f172a);
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            overflow: hidden;
         }
 
-        .card-box {
-            background: #ffffff;
-            color: #1f2933;
-            border-radius: 16px;
+        .card-landing {
+            background: #fff;
+            border-radius: 18px;
             padding: 48px;
             max-width: 900px;
             width: 100%;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+            box-shadow: 0 25px 70px rgba(0,0,0,.4);
+        }
+
+        h1 {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .actions a {
+            padding: 14px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 12px;
+            color: rgba(255,255,255,.6);
+            font-size: .85rem;
+        }
+
+        .login-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        @@media (max-width: 768px) {
+            .card-landing {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="card-box">
+<div class="bg-icons"></div>
+
+<div class="login-wrapper">
+
+    <div class="card-landing">
+
         <div>
-            <h1>Ticari Otomasyon</h1>
+            <h1>Online Ticari Otomasyon Sistemi</h1>
             <p>
-                Bu sistem <strong>Admin</strong> ve <strong>Cari</strong> kullanıcılar için
-                yetkilendirilmiş paneller sunar.
+                Admin ve Cari kullanıcılar için tasarlanmış,
+                yetkilendirme ve modüler yapı üzerine kurulu
+                kurumsal bir ticari otomasyon sistemidir.
+                <br /><br />
+                Devam etmek için giriş türünüzü seçin.
             </p>
         </div>
 
-        <div class="d-flex flex-column gap-3 justify-content-center">
-            <a href="/Login/GirisYap?rol=admin" class="btn btn-dark btn-lg">
+        <div class="actions d-flex flex-column justify-content-center gap-3">
+            <a href="/Login/GirisYap?rol=admin" class="btn btn-dark">
                 <i class="fas fa-user-shield me-2"></i> Admin Girişi
             </a>
 
-            <a href="/Login/GirisYap?rol=cari" class="btn btn-primary btn-lg">
+            <a href="/Login/GirisYap?rol=cari" class="btn btn-primary">
                 <i class="fas fa-user me-2"></i> Cari Girişi
             </a>
 
-            <a href="/Login/KayitOl" class="btn btn-outline-secondary btn-lg">
+            <a href="/Login/KayitOl" class="btn btn-outline-secondary">
                 <i class="fas fa-user-plus me-2"></i> Cari Kayıt Ol
             </a>
         </div>
+
     </div>
+
+</div>
+
+<div class="footer">
+    © Ticari Otomasyon @DateTime.Now.Year
+</div>
+
+<link rel="stylesheet" href="/css/animated-bg.css" />
+<script src="/js/animated-bg.js"></script>
 
 </body>
 </html>

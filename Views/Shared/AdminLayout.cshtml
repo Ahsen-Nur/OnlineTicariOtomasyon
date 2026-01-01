@@ -1,4 +1,13 @@
 @using Microsoft.AspNetCore.Http
+@{
+    var adminIdCheck = Context.Session.GetInt32("AdminId");
+    var cariIdCheck = Context.Session.GetInt32("CariId");
+
+    if (adminIdCheck == null && cariIdCheck == null)
+    {
+        Context.Response.Redirect("/Home/Index");
+    }
+}
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -48,6 +57,7 @@
     </style>
 </head>
 
+
 <body class="sb-nav-fixed">
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -56,6 +66,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
+@*
         <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Ara..." />
@@ -64,6 +75,7 @@
                 </button>
             </div>
         </div>
+*@
 
         @{
             var adminId = Context.Session.GetInt32("AdminId");
@@ -88,11 +100,6 @@
                         <li><a class="dropdown-item" href="/Hesabim/Index">Hesabım</a></li>
                         <li><hr /></li>
                         <li><a class="dropdown-item" href="/Login/CikisYap">Çıkış Yap</a></li>
-                    }
-                    else
-                    {
-                        <li><a class="dropdown-item" href="/Login/GirisYap">Giriş Yap</a></li>
-                        <li><a class="dropdown-item" href="/Login/KayitOl">Kayıt Ol</a></li>
                     }
 
                 </ul>
@@ -177,12 +184,10 @@
 
                         @if (adminId != null || cariId != null)
                         {
-                           <a class="nav-link collapsed"
-                              href="#"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#collapseMesaj"
-                              aria-expanded="false"
-                              aria-controls="collapseMesaj">
+                            <a class="nav-link collapsed"
+                               href="#"
+                               data-bs-toggle="collapse"
+                               data-bs-target="#collapseMesaj">
                                 <div class="sb-nav-link-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>

@@ -252,3 +252,5 @@
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/mheo17evtx-qqs9gfbkg5.gz
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/1jpydd4b0w-mxoi9lxfmc.gz
 /Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/6lrpj62c0i-e5prbl7ws2.gz
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz
+/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz

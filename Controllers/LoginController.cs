@@ -28,44 +28,45 @@ namespace MVCTicariOtomasyonWeb.Controllers
         // --------------------
         // GİRİŞ (POST)
         // --------------------
+
         [HttpPost]
-        public IActionResult GirisYap(string Mail, string Sifre)
+        public IActionResult GirisYap(string Mail, string Sifre, string Rol)
         {
-            // --------------------
-            // ADMIN
-            // --------------------
-            var admin = _context.Admins
-                .FirstOrDefault(x => x.KullaniciAd == Mail && x.Sifre == Sifre);
-
-            if (admin != null)
+    // ADMIN
+            if (Rol == "admin")
             {
-                HttpContext.Session.SetInt32("AdminId", admin.AdminId);
-                HttpContext.Session.SetString("Rol", "Admin");
+                var admin = _context.Admins
+                    .FirstOrDefault(x => x.KullaniciAd == Mail && x.Sifre == Sifre);
 
-                // 🔴 KRİTİK: mesajlar için mail kullanılıyor
-                HttpContext.Session.SetString("CariMail", admin.KullaniciAd);
-
-                return RedirectToAction("Index", "Admin");
+                if (admin != null)
+                {
+                    HttpContext.Session.SetInt32("AdminId", admin.AdminId);
+                    HttpContext.Session.SetString("Rol", "Admin");
+                    HttpContext.Session.SetString("CariMail", admin.KullaniciAd);
+                    return RedirectToAction("Index", "Admin");
+                }
             }
 
-            // --------------------
-            // CARİ
-            // --------------------
-            var cari = _context.Carilers
-                .FirstOrDefault(x => x.CariMail == Mail && x.Sifre == Sifre && x.Durum == true);
-
-            if (cari != null)
+    // CARİ
+            if (Rol == "cari")
             {
-                HttpContext.Session.SetInt32("CariId", cari.CariId);
-                HttpContext.Session.SetString("Rol", "Cari");
-                HttpContext.Session.SetString("CariMail", cari.CariMail);
+                var cari = _context.Carilers
+                    .FirstOrDefault(x => x.CariMail == Mail && x.Sifre == Sifre && x.Durum);
 
-                return RedirectToAction("Index", "Hesabim");
+                if (cari != null)
+                {
+                    HttpContext.Session.SetInt32("CariId", cari.CariId);
+                    HttpContext.Session.SetString("Rol", "Cari");
+                    HttpContext.Session.SetString("CariMail", cari.CariMail);
+                    return RedirectToAction("Index", "Hesabim");
+                }
             }
 
+            ViewBag.Rol = Rol;
             ViewBag.Hata = "Mail / kullanıcı adı veya şifre hatalı";
             return View();
         }
+
 
         // --------------------
         // CARİ ŞİFRE ALMA

@@ -1,0 +1,31 @@
+/* ICON ARKA PLAN KATMANI */
+.bg-icons {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* TEK TEK İKON */
+.bg-icon {
+    position: absolute;
+    top: -50px;
+    font-size: 22px;
+    opacity: 0.08;
+    animation: fall linear infinite;
+    color: #ffffff;
+}
+
+/* AŞAĞI DOĞRU AKIŞ */
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* LOGIN KARTI ÖNDE KALSIN */
+.login-wrapper {
+    position: relative;
+    z-index: 10;
+}

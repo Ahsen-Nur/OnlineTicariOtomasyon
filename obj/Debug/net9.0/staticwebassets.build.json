@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "woVi7S/eSngvTkk/X/3Yxgi/svv6tvwUVpsAjigQYQo=",
+  "Hash": "5V/rvW9/8Ac8C2vAyms0j8+1i53640RsDbwgyGyHRDc=",
   "Source": "MVCTicariOtomasyonWeb",
   "BasePath": "_content/MVCTicariOtomasyonWeb",
   "Mode": "Default",
@@ -141,6 +141,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz",
+      "SourceId": "MVCTicariOtomasyonWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/MVCTicariOtomasyonWeb",
+      "RelativePath": "css/animated-bg#[.{fingerprint=ziyuwpv7v0}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "1xeqjz0dbx",
+      "Integrity": "BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css"
     },
     {
       "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4l93atshn7-ft3s53vfgj.gz",
@@ -1739,6 +1760,27 @@
       "OriginalItemSpec": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
+      "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz",
+      "SourceId": "MVCTicariOtomasyonWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/MVCTicariOtomasyonWeb",
+      "RelativePath": "js/animated-bg#[.{fingerprint=g3ov8hibl9}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "nwsqx24p99",
+      "Integrity": "KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js"
+    },
+    {
       "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/y8v77ja0g6-qbt6h4ox5y.gz",
       "SourceId": "MVCTicariOtomasyonWeb",
       "SourceType": "Discovered",
@@ -1863,6 +1905,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/scopedcss/projectbundle/MVCTicariOtomasyonWeb.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css",
+      "SourceId": "MVCTicariOtomasyonWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/",
+      "BasePath": "_content/MVCTicariOtomasyonWeb",
+      "RelativePath": "css/animated-bg#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ziyuwpv7v0",
+      "Integrity": "tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/animated-bg.css"
     },
     {
       "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/custom.css",
@@ -2031,6 +2094,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/urunler/image_4xtl.webp"
+    },
+    {
+      "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js",
+      "SourceId": "MVCTicariOtomasyonWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/",
+      "BasePath": "_content/MVCTicariOtomasyonWeb",
+      "RelativePath": "js/animated-bg#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g3ov8hibl9",
+      "Integrity": "vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/animated-bg.js"
     },
     {
       "Identity": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/darkmode.js",
@@ -3757,6 +3841,304 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/animated-bg.css",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002932551320"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "340"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="
+        }
+      ]
+    },
+    {
+      "Route": "css/animated-bg.css",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="
+        }
+      ]
+    },
+    {
+      "Route": "css/animated-bg.css.gz",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "340"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI="
+        }
+      ]
+    },
+    {
+      "Route": "css/animated-bg.ziyuwpv7v0.css",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002932551320"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "340"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziyuwpv7v0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animated-bg.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="
+        }
+      ]
+    },
+    {
+      "Route": "css/animated-bg.ziyuwpv7v0.css",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/css/animated-bg.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "506"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziyuwpv7v0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animated-bg.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tSGGeSoYvX7fUrJr5nyGkTYpXWfxANNhzA0U7PnjQQ0="
+        }
+      ]
+    },
+    {
+      "Route": "css/animated-bg.ziyuwpv7v0.css.gz",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/4izooe1ol5-ziyuwpv7v0.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "340"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 15:57:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziyuwpv7v0"
+        },
+        {
+          "Name": "label",
+          "Value": "css/animated-bg.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BW128wAeakI7QhIMfu13DOTn9dVXHCkFj094a1uBcmI="
+        }
+      ]
+    },
+    {
       "Route": "css/custom.css",
       "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/6lrpj62c0i-e5prbl7ws2.gz",
       "Selectors": [
@@ -5057,6 +5439,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-alYa6UrE4E5Q1wh5nSPP9VQ51jV5dnCdneD1Zv5HHYw="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.g3ov8hibl9.js",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002380952381"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "419"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g3ov8hibl9"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animated-bg.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.g3ov8hibl9.js",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g3ov8hibl9"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animated-bg.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.g3ov8hibl9.js.gz",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "419"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g3ov8hibl9"
+        },
+        {
+          "Name": "label",
+          "Value": "js/animated-bg.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.js",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002380952381"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "419"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.js",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/wwwroot/js/animated-bg.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vFc985yqdCFX2l8x6Ov1zaf2aftqwIR5tMFRTyxdEa4="
+        }
+      ]
+    },
+    {
+      "Route": "js/animated-bg.js.gz",
+      "AssetFile": "/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/obj/Debug/net9.0/compressed/xip5nuc4mx-g3ov8hibl9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "419"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 01 Jan 2026 16:00:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KWIsJpNEsmfplaNmDdfWwk+xo+dYyYSe2h+YmbTGp7k="
         }
       ]
     },
