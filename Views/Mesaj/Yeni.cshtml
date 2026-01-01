@@ -1,0 +1,49 @@
+@using MVCTicariOtomasyonWeb.Models.sınıflar
+@model Mesaj
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Yeni Mesaj";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-warning text-dark">
+            <i class="fas fa-pen me-2"></i>
+            Yeni Mesaj Oluştur
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Alıcı Mail</label>
+                    <input type="text" name="AliciMail" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Konu</label>
+                    <input type="text" name="Konu" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mesaj İçeriği</label>
+                    <textarea name="Icerik" rows="5" class="form-control" required></textarea>
+                </div>
+
+                <button class="btn btn-success">
+                    <i class="fas fa-paper-plane"></i> Gönder
+                </button>
+
+                <a asp-action="Gelen" class="btn btn-secondary ms-2">
+                    Vazgeç
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>

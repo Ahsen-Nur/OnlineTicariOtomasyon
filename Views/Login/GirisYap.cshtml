@@ -16,7 +16,7 @@
                 <form method="post">
                     <div class="mb-3">
                         <label>Mail / Kullanıcı Adı</label>
-                        <input type="text" name="Mail" class="form-control" required />
+                        <input type="text" name="Mail" class="form-control" placeholder="@(ViewBag.Rol == "admin" ? "Kullanıcı Adı" : "Mail")" />
                     </div>
 
                     <div class="mb-3">

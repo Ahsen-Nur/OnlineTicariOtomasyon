@@ -30,6 +30,7 @@ namespace MVCTicariOtomasyonWeb.Models.sınıflar
         public DbSet<Kargo> Kargos { get; set; }
         public DbSet<KargoDetay> KargoDetays { get; set; }
         public DbSet<Iade> Iades { get; set; }
+        public DbSet<Mesaj> Mesajs { get; set; }
 
 
 

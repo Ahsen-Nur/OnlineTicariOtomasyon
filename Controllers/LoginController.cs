@@ -15,18 +15,25 @@ namespace MVCTicariOtomasyonWeb.Controllers
         }
 
         // --------------------
-        // GİRİŞ
+        // GİRİŞ (GET)
         // --------------------
         [HttpGet]
-        public IActionResult GirisYap()
+        public IActionResult GirisYap(string rol)
         {
+           
+            ViewBag.Rol = rol;
             return View();
         }
 
+        // --------------------
+        // GİRİŞ (POST)
+        // --------------------
         [HttpPost]
         public IActionResult GirisYap(string Mail, string Sifre)
         {
+            // --------------------
             // ADMIN
+            // --------------------
             var admin = _context.Admins
                 .FirstOrDefault(x => x.KullaniciAd == Mail && x.Sifre == Sifre);
 
@@ -34,10 +41,16 @@ namespace MVCTicariOtomasyonWeb.Controllers
             {
                 HttpContext.Session.SetInt32("AdminId", admin.AdminId);
                 HttpContext.Session.SetString("Rol", "Admin");
+
+                // 🔴 KRİTİK: mesajlar için mail kullanılıyor
+                HttpContext.Session.SetString("CariMail", admin.KullaniciAd);
+
                 return RedirectToAction("Index", "Admin");
             }
 
+            // --------------------
             // CARİ
+            // --------------------
             var cari = _context.Carilers
                 .FirstOrDefault(x => x.CariMail == Mail && x.Sifre == Sifre && x.Durum == true);
 
@@ -45,10 +58,12 @@ namespace MVCTicariOtomasyonWeb.Controllers
             {
                 HttpContext.Session.SetInt32("CariId", cari.CariId);
                 HttpContext.Session.SetString("Rol", "Cari");
+                HttpContext.Session.SetString("CariMail", cari.CariMail);
+
                 return RedirectToAction("Index", "Hesabim");
             }
 
-            ViewBag.Hata = "Mail veya şifre hatalı";
+            ViewBag.Hata = "Mail / kullanıcı adı veya şifre hatalı";
             return View();
         }
 
@@ -72,7 +87,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
                 return View();
             }
 
-            if (cari.Sifre != null)
+            if (!string.IsNullOrEmpty(cari.Sifre))
             {
                 ViewBag.Hata = "Bu hesap zaten aktif";
                 return View();
@@ -82,7 +97,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
             cari.Durum = true;
             _context.SaveChanges();
 
-            return RedirectToAction("GirisYap");
+            return RedirectToAction("GirisYap", new { rol = "cari" });
         }
 
         // --------------------
@@ -91,7 +106,7 @@ namespace MVCTicariOtomasyonWeb.Controllers
         public IActionResult CikisYap()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("GirisYap");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

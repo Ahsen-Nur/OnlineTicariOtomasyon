@@ -176,6 +176,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vS2F5aXRPbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Mesaj/Detay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzYWovRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Mesaj/Gelen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzYWovR2VsZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Mesaj/Gonderilen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzYWovR29uZGVyaWxlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Mesaj/Yeni.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVzYWovWWVuaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ahsennuraldas/Desktop/TicariOtomasyon/MVCTicariOtomasyonWeb/Views/Personel/Guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uZWwvR3VuY2VsbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

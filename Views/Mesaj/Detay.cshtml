@@ -1,0 +1,44 @@
+@using MVCTicariOtomasyonWeb.Models.sınıflar
+@model Mesaj
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Mesaj Detayı";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-info text-white">
+            <i class="fas fa-envelope-open-text me-2"></i>
+            Mesaj Detayı
+        </div>
+
+        <div class="card-body">
+
+            <div class="mb-3">
+                <strong>Gönderen:</strong> @Model.GonderenMail
+            </div>
+
+            <div class="mb-3">
+                <strong>Konu:</strong> @Model.Konu
+            </div>
+
+            <div class="mb-3">
+                <strong>Tarih:</strong> @Model.Tarih
+            </div>
+
+            <hr />
+
+            <div class="alert alert-secondary">
+                @Model.Icerik
+            </div>
+
+            <a asp-action="Gelen" class="btn btn-secondary mt-3">
+                <i class="fas fa-arrow-left"></i> Geri Dön
+            </a>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+@using MVCTicariOtomasyonWeb.Models.sınıflar
+@model List<Mesaj>
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "Gönderilen Mesajlar";
+}
+
+<div class="container-fluid px-4 mt-4">
+
+    <div class="card shadow-sm border-0">
+
+        <div class="card-header bg-success text-white d-flex align-items-center">
+            <i class="fas fa-paper-plane me-2"></i>
+            <h5 class="mb-0">Gönderilen Mesajlar</h5>
+        </div>
+
+        <div class="card-body">
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center">
+                    Henüz gönderilmiş mesaj bulunmamaktadır.
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover align-middle text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Konu</th>
+                            <th>Alıcı</th>
+                            <th>Tarih</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <td>@m.Konu</td>
+                                <td>@m.AliciMail</td>
+                                <td>@m.Tarih.ToShortDateString()</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
+        </div>
+    </div>
+</div>
